@@ -22,7 +22,7 @@ module.exports = {
 	        use: 'vue-loader'
 	      },
 	    {
-         test: /\.(woff|woff2|eot|ttf|otf)$/,
+         test: /\.(woff|woff2|eot|ttf|otf|txt)$/,
          use:[{
             loader: 'file-loader',
             options: {
@@ -39,7 +39,8 @@ module.exports = {
             { loader: 'css-loader', 
 	            options: { 
 		        importLoaders: 1,
-                outputPath: 'assets/css/' 
+		        name: 'css/[name].css',
+                outputPath: 'css/' 
                 } 
               },
             'postcss-loader',
@@ -70,10 +71,10 @@ module.exports = {
   ],
   output: {
 	  filename:'[name].js',
-    path: path.resolve(__dirname, 'docs')
+    path: path.resolve(__dirname, '../public/ui/')
   },
   devServer: {
 	  watchContentBase: true,
-    contentBase: path.join(__dirname, 'docs') // Get it to serve from somewhere other than right here.
+    contentBase: path.join(__dirname, '../docs/ui') // Get it to serve from somewhere other than right here.
   }
 }

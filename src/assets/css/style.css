@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: 'Zilla Slab';
-  font-weight: 400; 
+  font-weight: 400;
   src: url(../fonts/zilla-slab/ZillaSlab-Regular.otf) format('opentype');
 }
 @font-face {
@@ -138,6 +138,14 @@ th{
 	font-weight:700;
 	@apply font-display;
 }
+article .heading-l{
+  line-height:48px;
+}
+.heading-l.leading-tight{
+	font-size:36px;
+	line-height:1.15;
+
+}
 .heading-xl{
 	font-size:48px;
 	line-height:72px;
@@ -153,7 +161,7 @@ th{
 .heading-dxl{
 	font-size:72px;
 	line-height:96px;
-	font-weight:400;
+	font-weight:300;
 	@apply font-display;
 }
 button{
@@ -201,49 +209,77 @@ select.error {
 figcaption {
 	@apply text-small italic text-gray-700 p-2;
 }
+p {@apply ml-auto mr-auto text-large;}
+p.left { @apply ml-0;}
 p.short{max-width:39px; min-width:35px;}
 p.compliant{max-width:50px; min-width:40px;}
 p.optimal{max-width:90px; min-width:51px;}
 p.toobig{ min-width:91px;}
 .card {
-	@apply max-w-sm rounded overflow-hidden shadow-lg;
+	@apply rounded overflow-hidden shadow-lg;
+}
+.read {@apply ml-auto mr-auto;}
+.read p {
+ @apply  max-w-2xl mr-auto ml-auto my-4 text-large;
+}
+.read h1 {@apply heading-dxl text-orange-600}
+.read h2 {@apply heading-l text-green-500 my-8;}
+.read.home h2 {@apply text-orange-500;}
+.read h3{@apply heading-m text-gray-400 my-8;}
+.read h4 {@apply heading-s text-gray-700  my-8;}
+.read h5 {@apply heading-xs text-gray-700  my-8;}
+.read figure { @apply ml-auto mr-auto my-8;}
+.read ul {
+   @apply  max-w-xl mr-auto ml-auto my-4 text-large leading-snug list-disc ;
+   max-width:620px;
+}
+.read blockquote p{
+  max-width:none;
 }
 .card img {
 	@apply w-full;
 }
-a .card h3, a .card h4 {
+.card a.image { @apply border-0; }
+.card h3,  .card h4 {
 	@apply text-orange-600 font-display text-2xl font-bold;
 }
-a .card p{
+.card p{
 	@apply text-gray-700 ;
+}
+a .card  p{
+	@apply font-normal ;
 }
 .card.dark{
 	@apply text-white bg-gray-800;
 }
-a .card.dark p{
+.card.dark p{
 	@apply text-white;
 }
-a .card.dark h3, a .card.dark h4 {
+ .card.dark h3, .card.dark h4 {
 	@apply text-orange-500;
 }
 blockquote {
 	@apply text-2xl border-l-4 border-green-200 text-gray-600 p-6 my-6 ;
 }
+blockquote p{
+  max-width:none;
+}
 blockquote footer{
 	@apply text-small italic text-gray-500  mt-4 mb-2;
 }
 blockquote footer a{
- @apply not-italic;	
+ @apply not-italic;
 }
+#contact label, .contact label {font-size:28px;}
 header.top{
-	
+
 }
 header .menu{
-	display:none;
+	/* display:none; */
 }
 header .menu a{
-	
-	@apply font-medium text-large block px-3 py-2 inline-block mt-0  text-blue-700 border-white  mr-4 border-b-4 text-center;
+
+	@apply font-medium text-large block px-3 py-2 inline-block mt-0  text-gray-500 border-white  mr-4 border-b-4 text-center;
 	display:block;
 }
 header .menu a:hover, header .menu a:active{
@@ -275,29 +311,9 @@ header .menu a:hover, header .menu a:active{
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
 }
-@media (min-width: 640px) {
-	header .menu{
-		display:block;
-	}
-
-  	header .menu a{ 
-	  display:inline;
-	  }
-	header .menu a.button{
-	@apply font-body text-normal font-semibold py-2 px-4 border-2 border-yellow-500 inline-block text-sm leading-none border rounded text-blue-700 ;
-	
-	}
-	header .menu a.button:hover{
-		@apply bg-yellow-100 text-blue-900 bg-yellow-100;
-	}
-	header .menu a:hover {
-		 @apply text-blue-600 border-yellow-500 ; 
-	}
-	.menu-toggle{
-		display:none;
-	}
+footer p {
+	max-width: 1024px;
 }
-
 
 .petroglyph{
 	@apply font-display text-3xl  text-green-500 font-semibold;
@@ -305,3 +321,91 @@ header .menu a:hover, header .menu a:active{
 .petroglyph .creative{
 	@apply  text-orange-500 font-light;
 	}
+@media (max-width: 639px) {
+  .jumbotron .section{
+    height:35vh;
+  }
+  .jumbotron .heading-dxl {
+    /* font-size:80%; */
+    font-size:2.5rem;
+    line-height:3.5rem;
+    @apply text-center;
+
+  }
+  .petroglyph{
+  	@apply text-3xl;
+  }
+  .read {@apply px-2;}
+  .read h2 {@apply text-2xl leading-relaxed;}
+  .read ul {max-width:320px;}
+}
+@media (min-width: 640px) {
+	header .menu{
+		/* display:block; */
+	}
+
+  	header .menu a{
+	  /* display:inline; */
+
+	  }
+	header .menu a.button{
+	@apply font-body text-normal font-semibold  border-2 border-yellow-500  text-sm  border rounded text-blue-700 ;
+
+	}
+	header .menu a.button:hover{
+		@apply bg-yellow-100 text-blue-900 bg-yellow-100;
+	}
+	header .menu a:hover {
+		 @apply text-blue-600 border-yellow-500 bg-white ;
+	}
+	.menu-toggle{
+		display:none;
+	}
+  .jumbotron .section{
+    height:45vh;
+  }
+  .read h2 {@apply text-3xl leading-relaxed;}
+}
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  .jumbotron .section{
+    height:55vh;
+  }
+  .jumbotron .heading-dxl {
+    /* font-size:80%; */
+    font-size:3.8rem;
+    line-height:5rem;
+    @apply text-center;
+
+  }
+  header .menu a:first-child{
+    padding-left:0;
+  }
+    /* .read h2 {@apply text-2xl leading-relaxed;} */
+}
+@media screen and (min-width: 1024px) {
+  .jumbotron .section{
+    height:65vh;
+  }
+ header .menu a {
+
+ }
+ .read h1, .read h2, .read h3, .read h4, .read h5, .read h6 .read blockquote{max-width:1024px;@apply ml-auto mr-auto;}
+}
+@media screen and (min-width: 1524px) {
+  .jumbotron .section{
+    height:75vh;
+  }
+}
+@media screen and (min-width: 1724px) {
+  .jumbotron .section{
+    height:85vh;
+  }
+}
+@media (min-width:1840px){
+
+}
+@media (min-width:2040px){
+  .jumbotron .section{
+    height:95vh;
+  }
+}

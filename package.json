@@ -1,5 +1,5 @@
 {
-  "name": "Petroglyph-webpack-demo",
+  "name": "Petroglyph-website-ui",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -8,6 +8,7 @@
     "prod": "cross-env NODE_ENV=production webpack --no-progress"
   },
   "devDependencies": {
+    "@vue/cli": "^3.11.0",
     "autoprefixer": "^9.5.1",
     "cross-env": "^5.1",
     "css-loader": "^0.28.10",
@@ -18,11 +19,17 @@
     "postcss-loader": "^2.1.1",
     "style-loader": "^0.20.3",
     "tailwindcss": "^1",
-    "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2",
+    "vue-loader": "^15.7.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
-    "lodash": "^4.17.15"
+    "axios": "^0.19.0",
+    "lodash": "^4.17.15",
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.3"
   }
 }
