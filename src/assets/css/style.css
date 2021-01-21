@@ -215,9 +215,6 @@ p.short{max-width:39px; min-width:35px;}
 p.compliant{max-width:50px; min-width:40px;}
 p.optimal{max-width:90px; min-width:51px;}
 p.toobig{ min-width:91px;}
-.card {
-	@apply rounded overflow-hidden shadow-lg;
-}
 .read {@apply ml-auto mr-auto;}
 .read p {
  @apply  max-w-2xl mr-auto ml-auto my-4 text-large;
@@ -235,6 +232,10 @@ p.toobig{ min-width:91px;}
 }
 .read blockquote p{
   max-width:none;
+}
+
+.card {
+	@apply rounded overflow-hidden shadow-lg;
 }
 .card img {
 	@apply w-full;
