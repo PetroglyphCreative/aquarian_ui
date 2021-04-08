@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import img from './assets/img/sometimes_800.jpg';
+import tw_logo from './assets/img/tw-logo-white.svg';
 import Vue from 'vue/dist/vue.js';
 import axios from "axios";
 //import VueAxios from 'vue-axios'
@@ -67,9 +68,14 @@ const contactForm = new Vue({
 	  var formData = new FormData(document.getElementById('contactForm'));
 	  axios.post(apiUrl, formData)
 	  .then(function (response) {
-	//    console.log(response.data);
 	    currentObj.hasResponse= true;
 	    currentObj.responseMessage =  currentObj.successMessage;
+	    window.ga('send', {
+            hitType: 'event',
+            eventCategory: 'form',
+            eventAction: 'contact-petroglyph',
+            eventLabel: 'Submit contact form'
+            });
 	  })
 	  .catch(function (error) {
 	//	This will trigger if there's an error in the response OR in the .then() statement
