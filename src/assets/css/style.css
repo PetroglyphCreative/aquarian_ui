@@ -325,14 +325,24 @@ a .card  p.date{
     bottom: 0;
     right: 0;
 }
-.back a h4 {
+.back a h4, .back a h2 {
      @apply font-normal ;
 }
 .back a p {
     @apply font-normal text-gray-900;
 }
 #contact label, .contact label {font-size:28px;}
+
 header.top{
+
+}
+header.top h2.aquarian-logo{
+  background:url(/assets/images/logo-process_Aquarian_v07_color.png) center center no-repeat;
+  width: 287px;
+  height:117px;
+  background-size: 287px 117px;
+  text-indent:-999px;
+
 
 }
 header .menu{
@@ -350,6 +360,7 @@ header .menu a:hover, header .menu a:active{
   display: inline-block;
   cursor: pointer;
   float:right;
+  max-width: 54px;
   @apply border rounded px-2 py-1;
 }
 
@@ -419,13 +430,19 @@ footer p {
 	header .menu a:hover {
 		 @apply text-blue-600 border-yellow-500 bg-white ;
 	}
-	.menu-toggle{
-		display:none;
-	}
+
   .jumbotron .section{
     height:45vh;
   }
   .read h2 {@apply text-4xl leading-relaxed;}
+}
+@media screen and (min-width: 768px){
+.menu-toggle{
+  display:none;
+}
+header .menu a {
+  font-size:16px;
+ }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px){
   .jumbotron .section{
@@ -448,7 +465,7 @@ footer p {
     height:65vh;
   }
  header .menu a {
-
+  font-size:16px;
  }
  .read h1, .read h2, .read h3, .read h4, .read h5, .read h6 .read blockquote{@apply ml-auto mr-auto max-w-3xl;}
 }
@@ -456,6 +473,10 @@ footer p {
   .jumbotron .section{
     height:75vh;
   }
+  header .menu a {
+    font-size:18px;
+   }
+  .xxl\:flex-row { flex-direction: row; }
 }
 @media screen and (min-width: 1724px) {
   .jumbotron .section{
