@@ -253,7 +253,7 @@ p.toobig{ min-width:91px;}
 .read h3 {@apply heading-m text-green-600 my-8;}
 .read h4 {@apply heading-s text-gray-600 font-bold my-8;}
 .read h5 {@apply heading-xs text-gray-800 font-bold  my-8;}
-.read figure { @apply ml-auto mr-auto my-8 max-w-lg;}
+.read figure { @apply ml-auto mr-auto my-8 max-w-xl;}
 .read ul {
    @apply  max-w-xl mr-auto ml-auto my-4 text-large leading-snug list-disc ;
    max-width:620px;
@@ -262,8 +262,8 @@ p.toobig{ min-width:91px;}
    @apply  max-w-xl mr-auto ml-auto my-4 text-large leading-snug list-decimal ;
    max-width:620px;
 }
-.read pre {@apply bg-gray-200 max-w-xl;}
-.read figure.pageLead { width: 100%; max-width: none;
+.read pre {@apply bg-gray-100 max-w-xl ml-auto mr-auto p-3;}
+.read figure.pageLead { width: 100%; @apply max-w-3xl;
 }
 .read ul li, .read ol li{
     @apply m-2 text-large;
