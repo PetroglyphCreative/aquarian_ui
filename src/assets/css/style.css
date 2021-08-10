@@ -290,6 +290,7 @@ p.toobig{ min-width:91px;}
 .read footer.page-foot a {
   @apply text-turquoise-200;
 }
+.read .before-after figure {@apply m-2;}
 blockquote.twitter-tweet, .read blockquote.twitter-tweet{
     @apply border-2 border-turquoise-200  text-small rounded-t-lg;
     background: url(../img/tw-logo-white.svg) center left;
