@@ -1,40 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
 @tailwind base;
 
+@font-face {
+  font-family: "Merriweather Sans";
+  font-weight: 300;
+  src: url("../fonts/merriweather-sans/MerriweatherSans-Light.otf") format('opentype');
+}
+@font-face {
+font-family: "Merriweather Sans";
+  font-weight: 300;
+  font-style:italic;
+  src: url("../fonts/merriweather-sans/MerriweatherSans-LightItalic.otf") format('opentype');
+}
+@font-face {
+  font-family: 'Merriweather';
+  font-weight: 400;
+  src: url("../fonts/merriweather-sans/MerriweatherSans-Regular.otf") format('opentype');
+}
+@font-face {
+font-family: "Merriweather Sans";
+  font-weight: 400;
+  font-style:italic;
+  src: url("../fonts/merriweather-sans/MerriweatherSans-Italic.otf") format('opentype');
+}
+@font-face {
+font-family: "Merriweather Sans";
+  font-weight: 700;
+  src: url("../fonts/merriweather-sans/MerriweatherSans-Bold.otf") format('opentype');
+}
+@font-face {
+font-family: "Merriweather Sans";
+  font-weight: 700;
+  font-style:italic;
+  src: url("../fonts/merriweather-sans/MerriweatherSans-BoldItalic.otf") format('opentype');
+}
+@font-face {
+font-family: "Merriweather Sans";
+  font-weight: 900;
+  src: url("../fonts/merriweather-sans/MerriweatherSans-ExtraBold.otf") format('opentype');
+}
+@font-face {
+font-family: "Merriweather Sans";
+  font-weight: 900;
+  font-style:italic;
+  src: url("../fonts/merriweather-sans/MerriweatherSans-ExtraBoldItalic.otf") format('opentype');
+}
 
-@font-face {
-  font-family: 'Zilla Slab';
-  font-weight: 400;
-  src: url(../fonts/zilla-slab/ZillaSlab-Regular.otf) format('opentype');
-}
-@font-face {
-  font-family: "Zilla Slab";
-  font-weight: 400;
-  font-style:italic;
-  src: url('../fonts/zilla-slab/ZillaSlab-RegularItalic.otf') format('opentype');
-}
-@font-face {
-  font-family: "Zilla Slab";
-  font-weight: 500;
-  src: url("../fonts/zilla-slab/ZillaSlab-SemiBold.otf") format("opentype");
-}
-@font-face {
-  font-family: "Zilla Slab";
-  font-weight: 600;
-  src: url("../fonts/zilla-slab/ZillaSlab-SemiBold.otf") format("opentype");
-}
-@font-face {
-  font-family: "Zilla Slab";
-  font-weight: 700;
-  src: url("../fonts/zilla-slab/ZillaSlab-Bold.otf") format("opentype");
-}
-@font-face {
-  font-family: "Zilla Slab";
-  font-weight: 700;
-  font-style:italic;
-  src: url("../fonts/zilla-slab/ZillaSlab-BoldItalic.otf") format("opentype");
-}
 @font-face {
   font-family: "Libre Franklin";
   font-weight: 400;
@@ -84,7 +94,8 @@
 @tailwind components;
 
 @tailwind utilities;
-a{ @apply text-turquoise-900 font-semibold border-b-2 border-orange-400;}
+a{ @apply text-turquoise-800  ;}
+p a {@apply border-b-2 border-orange-400;}
 hr {border-width:0;}
 
 th{
@@ -211,6 +222,7 @@ select.error {
 figcaption {
 	@apply text-small italic text-gray-700 p-2;
 }
+
 blockquote {
 	@apply text-2xl border-l-8 border-turquoise-200 text-gray-700 p-6 my-6 ;
 }
@@ -236,13 +248,12 @@ p.toobig{ min-width:91px;}
 .read p {
  @apply  max-w-2xl mr-auto ml-auto my-4 text-large;
 }
-.read h1 {@apply heading-dxl text-orange-600}
-.read h2 {@apply  text-3xl heading-l text-turquoise-500 my-8;}
-.read.home h2 {@apply text-2xl  text-orange-500;}
-.read h3 {@apply heading-m text-gray-700 my-8;}
-.read h4 {@apply heading-s text-gray-700  my-8;}
-.read h5 {@apply heading-xs text-gray-700  my-8;}
-.read figure { @apply ml-auto mr-auto my-8;}
+.read h1 {@apply heading-dxl text-red-600}
+.read h2 {@apply  text-3xl heading-l text-turquoise-500 my-8 max-w-3xl;}
+.read h3 {@apply heading-m text-green-600 my-8;}
+.read h4 {@apply heading-s text-gray-600 font-bold my-8;}
+.read h5 {@apply heading-xs text-gray-800 font-bold  my-8;}
+.read figure { @apply ml-auto mr-auto my-8 max-w-lg;}
 .read ul {
    @apply  max-w-xl mr-auto ml-auto my-4 text-large leading-snug list-disc ;
    max-width:620px;
@@ -251,7 +262,10 @@ p.toobig{ min-width:91px;}
    @apply  max-w-xl mr-auto ml-auto my-4 text-large leading-snug list-decimal ;
    max-width:620px;
 }
-.read ul li, .read ol li../../../../../../../Desktop/petroglyphcreative.slack.com:.webloc{
+.read pre {@apply bg-gray-200 max-w-xl;}
+.read figure.pageLead { width: 100%; max-width: none;
+}
+.read ul li, .read ol li{
     @apply m-2 text-large;
     }
 .read blockquote {
@@ -260,11 +274,24 @@ p.toobig{ min-width:91px;}
 }
 .read blockquote p{
   max-width:none;
-  
-@apply mb-8 mt-0;
+  @apply mb-8 mt-0;
+} 
+
+.read footer.page-foot {
+  @apply flex m-2 bg-turquoise-700 text-white p-4 mt-6;
+
+}
+.read footer.page-foot h4{
+  @apply font-display text-xl  m-1 font-bold text-turquoise-100;
+}
+.read footer.page-foot ul li {
+ @apply list-none;
+}
+.read footer.page-foot a {
+  @apply text-turquoise-200;
 }
 blockquote.twitter-tweet, .read blockquote.twitter-tweet{
-    @apply border-l-0 border-b-2 border-turquoise-200  text-small rounded-t-lg;
+    @apply border-2 border-turquoise-200  text-small rounded-t-lg;
     background: url(../img/tw-logo-white.svg) center left;
     background-size:contain;
     background-repeat: no-repeat;
@@ -281,8 +308,11 @@ blockquote.twitter-tweet p, .read blockquote.twitter-tweet p{
 	@apply w-full;
 }
 .card a.image { @apply border-0; }
-.card h3,  .card h4 {
-	@apply text-orange-600 font-display text-2xl font-semibold leading-10;
+.card h3{
+	@apply text-red-600 font-display text-2xl font-semibold leading-10;
+}
+.card h4 {
+	@apply text-red-700 font-display text-xl font-semibold leading-10;
 }
 .card p{
 	@apply text-gray-900 my-2;
@@ -336,14 +366,18 @@ a .card  p.date{
 #contact label, .contact label {font-size:28px;}
 
 header.top{
-
+  
+}
+header.top .logo.lock-up {
+  width:200px;
+  height:80px;
 }
 header.top .aquarian-logo{
   background:url(../img/aquarian-logo-web.svg) center center no-repeat;
   width: 200px;
   height:80px;
   background-size: 196px 70px;
-  text-indent:-999px;
+  /* text-indent:-999px; */
 
 
 }
@@ -354,6 +388,7 @@ header .menu a{
 
 	@apply font-medium text-large block px-3 py-2 inline-block mt-0  text-gray-700 border-white  mr-4 border-b-4 text-center;
 	display:block;
+  white-space: nowrap;
 }
 header .menu a:hover, header .menu a:active{
 	@apply bg-orange-100;
@@ -385,21 +420,63 @@ header .menu a:hover, header .menu a:active{
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
 }
+.home-callouts {
+  @apply ml-auto mr-auto;
+}
+.home-callouts h3{
+  @apply text-2xl text-turquoise-600 font-display font-bold mb-4;
+}
+.home-callouts p {
+  @apply max-w-xl;
+}
 footer p {
 	max-width: 1024px;
 }
-.aquarian{
-	@apply font-display text-3xl  text-gray-900 ;
+footer.pagefoot a {
+    @apply text-turquoise-100;
+
+}
+.aquarian {
+  @apply font-display text-3xl  text-gray-900 ml-12 leading-7 text-right;
 	font-weight:700 ;
 	font-style: italic;
-	}
+}
 .web-studio{
-	@apply font-display text-3xl text-turquoise-900;
+	@apply font-display text-turquoise-500 font-bold uppercase;
 	font-weight: 400;
-	font-style: normal;}
+	font-style: normal;
+  letter-spacing: 0.0625em;
+}
+.logo.lock-up {
+  position:relative;
+  background:url('../img/just-sailboat.svg') left center no-repeat;
+  max-width:210px;
+  @apply py-8 ;
+}
+.logo.lock-up .aquarian {
+  position:absolute;
+  top:30%;
+  right:0;
+
+}
+.logo.lock-up .aquarian .web-studio{
+  @apply  text-xs;
+  position:absolute;
+  right:0;
+  top: 30px;
+ 
+}
 .aquarian .web-studio{
 	line-height: .5rem ;
 	}
+h1 .logo.lock-up {
+  display:inline-block;
+  width:250px;
+  height:80px;
+}
+.standout-headline {
+  @apply font-display bg-turquoise-100 text-gray-900 text-xl text-center py-4;
+}
 @media (max-width: 639px) {
   .jumbotron .section{
     height:35vh;
@@ -414,8 +491,8 @@ footer p {
   .aquarian{
   	@apply text-3xl;
   }
-  .read {@apply px-2;}
-  .read h2 {@apply text-2xl leading-relaxed;}
+  .read {@apply px-8;}
+  .read h2, .read h3, .read h4 {@apply text-2xl leading-relaxed;}
   .read ul {max-width:320px;}
 }
 @media (min-width: 640px) {
@@ -441,6 +518,13 @@ footer p {
   .jumbotron .section{
     height:45vh;
   }
+  .jumbotron .heading-dxl {
+    /* font-size:80%; */
+    font-size:2.8rem;
+    line-height:4rem;
+    @apply text-center;
+
+  }
   .read h2 {@apply text-4xl leading-relaxed;}
 }
 @media screen and (min-width: 768px){
@@ -450,18 +534,14 @@ footer p {
 header .menu a {
   font-size:16px;
  }
+
 }
 @media screen and (min-width: 768px) and (max-width: 1024px){
   .jumbotron .section{
     height:55vh;
+    min-height:500px;
   }
-  .jumbotron .heading-dxl {
-    /* font-size:80%; */
-    font-size:3.8rem;
-    line-height:5rem;
-    @apply text-center;
 
-  }
   header .menu a:first-child{
     padding-left:0;
   }
@@ -470,11 +550,22 @@ header .menu a {
 @media screen and (min-width: 1024px) {
   .jumbotron .section{
     height:65vh;
+    min-height:655px;
   }
  header .menu a {
   font-size:16px;
  }
  .read h1, .read h2, .read h3, .read h4, .read h5, .read h6 .read blockquote{@apply ml-auto mr-auto max-w-3xl;}
+ .jumbotron .heading-dxl {
+  /* font-size:80%; */
+  font-size:3.8rem;
+  line-height:5rem;
+  @apply text-center;
+
+}
+.standout-headline {
+  @apply font-bold text-xl;
+}
 }
 @media screen and (min-width: 1524px) {
   .jumbotron .section{
