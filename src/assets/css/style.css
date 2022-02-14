@@ -250,7 +250,7 @@ p.toobig{ min-width:91px;}
 }
 .read h1 {@apply heading-dxl text-red-600}
 .read h2 {@apply  text-3xl heading-l text-turquoise-500 my-8 max-w-3xl;}
-.read h3 {@apply heading-m text-green-600 my-8;}
+.read h3 {@apply heading-m text-blue-800 my-8;}
 .read h4 {@apply heading-s text-gray-600 font-bold my-8;}
 .read h5 {@apply heading-xs text-gray-800 font-bold  my-8;}
 .read figure { @apply ml-auto mr-auto my-8 max-w-xl;}
@@ -556,7 +556,8 @@ header .menu a {
  header .menu a {
   font-size:16px;
  }
- .read h1, .read h2, .read h3, .read h4, .read h5, .read h6 .read blockquote{@apply ml-auto mr-auto max-w-3xl;}
+ .read h1, .read h2 {@apply ml-auto mr-auto max-w-4xl;}
+ .read h3, .read h4, .read h5, .read h6 .read blockquote{@apply ml-auto mr-auto max-w-3xl;}
  .jumbotron .heading-dxl {
   /* font-size:80%; */
   font-size:3.8rem;
