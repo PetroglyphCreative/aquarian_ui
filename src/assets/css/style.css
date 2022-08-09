@@ -23,6 +23,12 @@ font-family: "Merriweather Sans";
   src: url("../fonts/merriweather-sans/MerriweatherSans-Italic.otf") format('opentype');
 }
 @font-face {
+  font-family: "Merriweather Sans";
+    font-weight: 500;
+    font-style:italic;
+    src: url("../fonts/merriweather-sans/MerriweatherSans-Italic.otf") format('opentype');
+  }
+@font-face {
 font-family: "Merriweather Sans";
   font-weight: 700;
   src: url("../fonts/merriweather-sans/MerriweatherSans-Bold.otf") format('opentype');
@@ -130,7 +136,7 @@ th{
 .heading-s{
 	font-size:24px;
 	line-height:40px;
-	font-weight:400;
+	font-weight:300;
 	@apply font-display;
 }
 .heading{
@@ -148,7 +154,7 @@ th{
 .heading-l{
 	font-size:36px;
 	line-height:64px;
-	font-weight:700;
+	font-weight:600;
 	@apply font-display;
 }
 article .heading-l{
@@ -184,7 +190,7 @@ button:hover{
 	@apply bg-turquoise-800;
 }
 button.btn-lg{
-	@apply py-4 px-10 text-large;
+	@apply py-4 px-10 text-large ;
 }
 .error-msg{
 	@apply text-red-500 text-xs italic
@@ -192,10 +198,10 @@ button.btn-lg{
 label{
 	@apply font-bold;
 }
-input[type='text'], textarea {
-	@apply shadow bg-gray-100 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
+input[type='text'], input[type='email'], textarea {
+	@apply shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
 }
-input[type='text']:focus, textarea:focus{
+input[type='text']:focus, input[type='email']:focus, textarea:focus{
 	@apply outline-none shadow-outline;
 }
 input[type='checkbox']{
@@ -224,7 +230,7 @@ figcaption {
 }
 
 blockquote {
-	@apply text-2xl border-l-8 border-turquoise-200 text-gray-700 p-6 my-6 ;
+	@apply text-2xl border-l-4 border-turquoise-100 text-gray-900 p-6 my-6 ;
 }
 blockquote p{
   max-width:none;
@@ -248,11 +254,13 @@ p.toobig{ min-width:91px;}
 .read p {
  @apply  max-w-2xl mr-auto ml-auto my-4 text-large;
 }
+.read .blog-bio p {@apply text-base}
 .read h1 {@apply heading-dxl text-red-600}
-.read h2 {@apply  text-3xl heading-l text-turquoise-500 my-8 max-w-3xl;}
-.read h3 {@apply heading-m text-blue-800 my-8;}
+.read h2 {@apply heading-m text-turquoise-600 my-8 max-w-3xl;}
+.read h3 {@apply heading text-blue-800 my-8;}
 .read h4 {@apply heading-s text-gray-600 font-bold my-8;}
 .read h5 {@apply heading-xs text-gray-800 font-bold  my-8;}
+
 .read figure { @apply ml-auto mr-auto my-8 max-w-xl;}
 .read ul {
    @apply  max-w-xl mr-auto ml-auto my-4 text-large leading-snug list-disc ;
@@ -265,12 +273,18 @@ p.toobig{ min-width:91px;}
 .read pre {@apply bg-gray-100 max-w-xl ml-auto mr-auto p-3;}
 .read figure.pageLead { width: 100%; @apply max-w-3xl;
 }
+.read figure.pageLead img{
+  border: 1px solid #ddd;
+}
+figure figcaption, figure figcaption p, .read figure figcaption p {
+  @apply text-sm mt-0;
+}
 .read ul li, .read ol li{
     @apply m-2 text-large;
     }
 .read blockquote {
-    max-width:920px;
-    @apply mr-auto ml-auto
+    
+    @apply mr-auto ml-auto max-w-2xl
 }
 .read blockquote p{
   max-width:none;
@@ -479,15 +493,15 @@ h1 .logo.lock-up {
   @apply font-display bg-turquoise-100 text-gray-900 text-xl text-center py-4;
 }
 @media (max-width: 639px) {
-  .jumbotron .section{
-    height:35vh;
-  }
+  
   .jumbotron .heading-dxl {
-    /* font-size:80%; */
-    font-size:2.5rem;
+    font-size:2.2rem;
     line-height:3.5rem;
     @apply text-center;
 
+  }
+  .jumbotron picture, .jumbotron img {
+    width:90%;
   }
   .aquarian{
   	@apply text-3xl;
@@ -516,17 +530,16 @@ h1 .logo.lock-up {
 		 @apply text-turquoise-600 border-orange-500 bg-white ;
 	}
 
-  .jumbotron .section{
-    height:45vh;
-  }
+ 
   .jumbotron .heading-dxl {
     /* font-size:80%; */
-    font-size:2.8rem;
+    font-size:2.2rem;
     line-height:4rem;
     @apply text-center;
 
   }
-  .read h2 {@apply text-4xl leading-relaxed;}
+
+
 }
 @media screen and (min-width: 768px){
 .menu-toggle{
@@ -538,10 +551,7 @@ header .menu a {
 
 }
 @media screen and (min-width: 768px) and (max-width: 1024px){
-  .jumbotron .section{
-    height:55vh;
-    min-height:500px;
-  }
+
 
   header .menu a:first-child{
     padding-left:0;
@@ -549,18 +559,15 @@ header .menu a {
     /* .read h2 {@apply text-2xl leading-relaxed;} */
 }
 @media screen and (min-width: 1024px) {
-  .jumbotron .section{
-    height:65vh;
-    min-height:655px;
-  }
+
  header .menu a {
   font-size:16px;
  }
- .read h1, .read h2 {@apply ml-auto mr-auto max-w-4xl;}
- .read h3, .read h4, .read h5, .read h6 .read blockquote{@apply ml-auto mr-auto max-w-3xl;}
+ .read h1, .read h2 {@apply ml-auto mr-auto max-w-3xl;}
+ .read h3, .read h4, .read h5, .read h6 .read blockquote{@apply ml-auto mr-auto max-w-2xl;}
  .jumbotron .heading-dxl {
   /* font-size:80%; */
-  font-size:3.8rem;
+  font-size:2.5rem;
   line-height:5rem;
   @apply text-center;
 
@@ -570,24 +577,25 @@ header .menu a {
 }
 }
 @media screen and (min-width: 1524px) {
-  .jumbotron .section{
-    height:75vh;
-  }
+
   header .menu a {
     font-size:18px;
    }
   .xxl\:flex-row { flex-direction: row; }
 }
 @media screen and (min-width: 1724px) {
-  .jumbotron .section{
-    height:85vh;
+
+  .jumbotron img {
+    width:77%;
   }
 }
 @media (min-width:1840px){
-
+  .jumbotron .section img {
+    width:70%;
+  }
 }
 @media (min-width:2040px){
-  .jumbotron .section{
-    height:95vh;
+  .jumbotron .section img {
+    width:65%;
   }
 }

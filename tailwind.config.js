@@ -133,10 +133,5 @@ module.exports = {
       }
   },
   variants: {},
-  plugins: [],
-  purge: [
-    "../../templates/**/*.html", 
-    "../../templates/**/*.twig", 
-
-  ],
+  plugins: []
 }
