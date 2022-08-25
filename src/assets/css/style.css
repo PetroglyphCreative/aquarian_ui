@@ -378,7 +378,6 @@ a .card  p.date{
 .back a p {
     @apply font-normal text-gray-900;
 }
-#contact label, .contact label {font-size:28px;}
 
 header.top{
   

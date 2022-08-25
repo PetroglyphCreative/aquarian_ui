@@ -7,7 +7,7 @@ module.exports = {
   entry: {
 	  main: './src/index.js',
 	  styles:'./src/assets/css/style.css'
-	  
+
   },
   mode: process.env.NODE_ENV,
   resolve: {
@@ -36,12 +36,12 @@ module.exports = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            { loader: 'css-loader', 
-	            options: { 
+            { loader: 'css-loader',
+	            options: {
 		        importLoaders: 1,
 		        name: 'css/[name].css',
-                outputPath: 'css/' 
-                } 
+                outputPath: 'css/'
+                }
               },
             'postcss-loader',
           ],
@@ -71,7 +71,7 @@ module.exports = {
   ],
   output: {
 	  filename:'[name].js',
-    path: path.resolve(__dirname, '../public/ui/')
+    path: path.resolve(__dirname, '../deploy/public/ui/')
   },
   devServer: {
 	  watchContentBase: true,
