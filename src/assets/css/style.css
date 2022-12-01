@@ -189,6 +189,25 @@ button {
 button:hover {
   @apply bg-gray-100;
 }
+button.btn-lg{
+	@apply py-4 px-10 text-large ;
+}
+button.callout {
+  transition:all 0.5s ;
+  white-space: nowrap;
+  @apply my-8 my-4 flex   max-w-sm border-l-2 border-r-2 border-turquoise-600 bg-turquoise-400 text-white;
+}
+button.callout:hover {
+  transform:scale(1.1,1.1);
+    -webkit-transform:scale(1.1,1.1);
+    -moz-transform:scale(1.1,1.1);
+  @apply border-turquoise-700 bg-turquoise-500;
+}
+
+.transition-bg {
+  transition:background-color 0.5s ease;
+}
+
  .greet-form .fui-btn, .greet-form .fui-submit{
 	 @apply  font-bold py-2 px-4 rounded bg-turquoise-500 text-white border-turquoise-600 border;
 }
@@ -196,9 +215,7 @@ button:hover {
 .greet-form .fui-submit:hover{
 	@apply bg-turquoise-800;
 }
-button.btn-lg{
-	@apply py-4 px-10 text-large ;
-}
+
 .error-msg{
 	@apply text-red-500 text-xs italic
 }
@@ -333,8 +350,15 @@ blockquote.twitter-tweet p, .read blockquote.twitter-tweet p{
 	@apply rounded overflow-hidden shadow-lg;
 }
 .card img {
+  transition: transform 2s ease;
 	@apply w-full;
 }
+
+.card img:hover {
+
+  transform: scale(1.25);
+  
+  }
 .card a.image { @apply border-0; }
 .card h3{
 	@apply text-red-600 font-display text-2xl font-semibold leading-10;
