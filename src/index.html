@@ -12,30 +12,151 @@
     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TJB28Q"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<header id='top' class='top border-gray-200 border-b-2 '>
-		<nav class="lg:flex items-center lg:justify-between lg:flex-wrap  py-4 px-6 border-gray-300 border-b-2 ">
-		  <div class="w-full flex-grow lg:flex lg:items-center w-auto">
-		    <div class="text-sm  flex flex-row justify-between w-full">
-			  <div class="flex-grow">
-		      	<a href="https://www.aquarianwebdesign.com"   >
-				<div class='logo lock-up mr-2'><span class='aquarian '>Aquarian<span class='web-studio '> Web Studio</span></span></div>
-		      	</a>
-			  </div>
-			  <div class="menu-toggle flex justify-end" id="mobileMenuToggle">
-				  <div class="bar1"></div>
-				  <div class="bar2"></div>
-				  <div class="bar3"></div>
-			  </div>
-		    </div>
-		    <div class="menu hidden md:flex md:flex-nowrap " id="siteMenu">
-			    <a href="/work">Projects</a>
-			    <a href="/web-design-development-services" title="Web design and development services">Services</a>
-			    <a href="/support" title="get support">Support</a>
-			    <a href="/blog" title="Aquarian Blog">Blog</a>
-			    <a href="/about" title="About Us">About</a>
-			    <a href="/contact" title="Contact">Contact</a>
-			    <a href="https://github.com/carolinecblaker/aquarian-UI" class="button my-3">Github</a>
-		    </div>
-		  </div>
+		<nav class="flex flex-col lg:flex-row items-center lg:justify-between lg:flex-wrap  py-4 px-6 border-gray-300 border-b-2 ">
+			<ul class="block flex flex-col w-full md:flex-row md:flex-wrap lg:flex-no-wrap lg:items-stretch lg:justify-between ">
+				<li class=' flex text-center md:text-left md:w-1/2 lg:w-auto  justify-between' >
+								<div class="flex-grow">
+									<a href="/"   >
+								  <div class='logo lock-up mr-2'><span class='aquarian '>Aquarian<span class='web-studio '> Web Studio</span></span></div>
+									</a>
+								</div>
+								<a class="phone-btn md:hidden align-top h-12 w-12 border border-gray-200 rounded p-2 bg-teal-700" title="Call Us Now" href='tel:2159225683;100'><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									viewBox="0 0 53.942 53.942" style="enable-background:new 0 0 53.942 53.942;" xml:space="preserve">
+							   <path style="fill:#fff;fill-rule:evenodd;clip-rule:evenodd;" d="M53.364,40.908c-2.008-3.796-8.981-7.912-9.288-8.092c-0.896-0.51-1.831-0.78-2.706-0.78c-1.301,0-2.366,0.596-3.011,1.68
+								   c-1.02,1.22-2.285,2.646-2.592,2.867c-2.376,1.612-4.236,1.429-6.294-0.629L17.987,24.467c-2.045-2.045-2.233-3.928-0.632-6.291
+								   c0.224-0.309,1.65-1.575,2.87-2.596c0.778-0.463,1.312-1.151,1.546-1.995c0.311-1.123,0.082-2.444-0.652-3.731
+								   c-0.173-0.296-4.291-7.27-8.085-9.277c-0.708-0.375-1.506-0.573-2.306-0.573c-1.318,0-2.558,0.514-3.49,1.445L4.7,3.986
+								   c-4.014,4.013-5.467,8.562-4.321,13.52c0.956,4.132,3.742,8.529,8.282,13.068l14.705,14.705c5.746,5.746,11.224,8.66,16.282,8.66
+								   c0,0,0,0,0.001,0c3.72,0,7.188-1.581,10.305-4.698l2.537-2.537C54.033,45.163,54.383,42.833,53.364,40.908z"/></a>
+								<a class="menu-toggle md:hidden  align-top h-12" id='mobileMenuToggle' v-on:click="openMobileMenuContainer"  v-bind:class="{ 'change': m_showing}">
+								  <div class="bar1"></div>
+								  <div class="bar2"></div>
+								  <div class="bar3"></div>
+								</a>
+				</li>
+				<li class=" primary_nav  md:flex md:order-last md:justify-around md:w-full lg:w-auto lg:order-none border-box items-center" v-bind:class="{'block': m_showing, 'hidden': !m_showing}">
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl  px-12 py-3 md:text-lg md:px-6 md:py-1 lg:px-2 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 " v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='process' data-menutitle='Process and Services'>Our Process</button>
+								<div class='vertical-menu' data-nav='process' data-menu-place='header' v-bind:style="{ display: display.process }">
+									<h5 class='text-large md:text-m font-light block mb-2 ml-6 md:ml-0'>Web Design &amp; Development</h5>
+								</div>	
+								<div class='p-4  vertical-menu' data-nav='process' data-menu-place='left' v-bind:style="{ display: display.process }">
+									<ul class="subnav left" >
+									
+									<li><a href="#" >Step 1: Stabilize and Secure</a></li>
+									<li><a href="#" >Step 2: Enhance and Study</a></li>
+									<li><a href="#" >Step 3: Scale</a></li>
+									<li><a href="#" >Niche Services</a></li>
+									</ul>
+								</div>
+								<div class=' vertical-menu' data-nav='process' data-menu-place='right' v-bind:style="{ display: display.process }">
+									<ul class="subnav right utility" >
+										
+										<li><a href="#">Website Problem Rescue</a></li>
+										<li><a href="#">Front-end Feature Design and Translation</a></li>
+										<li><a href="#">Content Strategy / SEO</a></li>
+										<li><a href="#">Social Media</a></li>
+										<li><a href="#">Petroglyph UI Web Design &amp; Code Customization</a></li>
+										<li><a href="#">ExpressionEngine Websites</a></li>
+										<li><a href="#">Craft CMS Websites</a></li>
+										
+										
+									</ul>
+								</div>
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-2 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0" v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='work' data-menutitle='See our work'>Work</button>
+								<div class='p-4 vertical-menu' data-nav='work' data-menu-place='left' v-bind:style="{ display: display.work }">
+									<ul class="subnav left">
+										<li><a href="/support-groups">Work Examples</a></li>
+									
+										<li><a href="#">test</a></li>
+									
+									</ul>
+								</div>
+								<div  data-nav='work' data-menu-place='right' v-bind:style="{ display: display.work }" class="subnav right ">
+									<ul class="subnav right my-4 utility" >
+									<li><a href="/calendar" class="highlight">Full Calendar View</a></li>
+									</ul>
+								</div>
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-2 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0"  v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='blog' data-menutitle='Postcards Blog'>Postcards Blog</button>
+								<div class='p-4 vertical-menu' data-nav='self-help' data-menu-place='left' v-bind:style="{ display: display.blog }">
+									<ul class="subnav left">
+										subnav left
+										
+									</ul>
+								</div>
+								<div class="p-4 vertical-menu" data-nav='self-help' data-menu-place='right' v-bind:style="{ display: display.blog }">
+									<div class="subnav right ">
+										<div class = 'utility'>
+										<form class='clearfix'  action="{# url('search/tips') #}">
+											<input name="q" type='text' placeholder="Search" >
+											<button type='submit' class='px-8 py-3 border rounded text-white text-bold bg-teal-700  hover:bg-teal-600 m-1 block md:inline-block text-center ml-0 mr-4 right float-right'>Go</button>
+										</form>
+										<a href="#" class='highlight'>Latest Postcards</a>
+										</div>
+										<ul class="rightside-categories md:ml-8" >
+										right side
+										</ul>
+									</div>
+								</div>
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-2 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0" v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='about' data-menutitle='About Us'>Who We are</button>
+								<div class='vertical-menu p-4' data-nav='about' data-menu-place='left' v-bind:style="{ display: display.about}">
+									<ul class="subnav left" >
+										
+										  <li><a href="#">thiird third</a></li>
+									
+									</ul>
+								</div>
+								<div class="vertical-menu" data-nav='about' data-menu-place='right' v-bind:style="{ display: display.about}" >
+									<ul class="subnav right mb-4 utility" >
+										<li class="mb-4"><a href="/locations">Based in Albuquerque, NM</a></li>
+									
+										  <li><a href="#">test test</a></li>
+									
+									</ul>												
+								</div>
+								<div  data-nav='about' data-menu-place='footer' v-bind:style="{ display: display.about}" >
+									<h5 class='font-light text-medium mb-2'>Footer Content</h5>
+									
+								</div>
+								
+				</li>
+				<li class="secondary_nav  md:flex md:justify-end md:w-1/2 lg:w-auto items-center" v-bind:class="{'block': m_showing, 'hidden': !m_showing}">
+								<a class="phone-btn flex invisible h-0 md:block md:visible align-top md:h-auto w-10 border border-gray-200 rounded md:p-2 bg-teal-700" title="Call Us Now" href='tel:2159225683;100'><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									viewBox="0 0 53.942 53.942" style="enable-background:new 0 0 53.942 53.942;" xml:space="preserve">
+							   <path style="fill:#fff;fill-rule:evenodd;clip-rule:evenodd;" d="M53.364,40.908c-2.008-3.796-8.981-7.912-9.288-8.092c-0.896-0.51-1.831-0.78-2.706-0.78c-1.301,0-2.366,0.596-3.011,1.68
+								   c-1.02,1.22-2.285,2.646-2.592,2.867c-2.376,1.612-4.236,1.429-6.294-0.629L17.987,24.467c-2.045-2.045-2.233-3.928-0.632-6.291
+								   c0.224-0.309,1.65-1.575,2.87-2.596c0.778-0.463,1.312-1.151,1.546-1.995c0.311-1.123,0.082-2.444-0.652-3.731
+								   c-0.173-0.296-4.291-7.27-8.085-9.277c-0.708-0.375-1.506-0.573-2.306-0.573c-1.318,0-2.558,0.514-3.49,1.445L4.7,3.986
+								   c-4.014,4.013-5.467,8.562-4.321,13.52c0.956,4.132,3.742,8.529,8.282,13.068l14.705,14.705c5.746,5.746,11.224,8.66,16.282,8.66
+								   c0,0,0,0,0.001,0c3.72,0,7.188-1.581,10.305-4.698l2.537-2.537C54.033,45.163,54.383,42.833,53.364,40.908z"/></a>
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 font-medium block md:flex mr-auto ml-auto md:m-0" id="show-modal" @click="showModal = true">Newsletter</button>
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-2 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0" v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='contact' data-menutitle='Points of Contact'>Get In Touch</button>
+								<div class='vertical-menu p-4' data-nav='contact' data-menu-place='left' v-bind:style="{ display: display.contact}">
+									<ul class="subnav left" >
+										<li><a href="#">Contact Page</a></li>
+										  <li><a href="#">Call Us</a></li>
+										  <li><a href="#">Email Us</a></li>
+									
+									</ul>
+								</div>
+				</li>
+							
+			</ul>
+			<!--<dropdown-holder></dropdown-holder>-->
+			<div class="dropdown-holder relative  bg-white w-full block z-20" id="menuroot" >
+				<div class="dropdown-point"></div>
+					<div class="dropdown-box border-2 border-turquoise-300 bg-white p-4" id='menubox' style='' v-on:mouseout='hideboard' v-on:mouseover="hoverboard" v-bind:style="{ left: menu_lpos + 'px', display: menudisplay }" v-bind:class="menu.name">
+						<h4 class='font-display text-semibold text-prussianblue-500 text-2xl block align-left w-full mb-4 '>{{menu.title}}</h4>
+						
+						<div class='header w-full' id='menuheader' v-html='menu.header'></div>
+						<div class="w-full flex">
+						<div class='menu-left w-1/2' id='menuleft' v-html='menu.left'></div>
+						<div class='menu-right w-1/2' id='menuright' v-html='menu.right'></div>
+						</div>
+						<div class='footer w-full' id='menufooter' v-html='menu.footer'></div>
+						
+					</div>
+				</div>
+			</div> 
 		</nav>
 	</header>
 	<div class="flex mb-4">
@@ -725,5 +846,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<p class='font-body  text-center text-white ml-auto mr-auto my-12'> Code by Caroline C. Blaker for <a href="https://www.petroglyphcreative.com" class='text-turquoise-200'>Aquarian Web Studio</a> using Tailwind CSS and Webpack. UI Kit Design by <a href="https://block81.com" class='text-turquoise-200'>Block 81</a>.</p>
 		</div>
     </footer>
+	<modal v-if="showModal" @close="showModal = false">
+		{# 
+		you can use custom content in Vue.JS to overwrite this here default content 
+		#}
+		<h3 slot="header" class="font-display text-2xl text-gray-600 mb-6">ModaL title</h3>
+		<div slot="body">
+			
+			<div class="flex mb-4 items-center">
+				<div class="md:w-1/2">
+				
+				</div>
+				<div class="md:w-1/2 md:ml-10 my-3 ml-2">
+					<h4 class="font-display text-xl text-prussianblue-600 mb-2">titre</h4>
+					
+					<p><a href="#">More Details</a> | <a href="#">Map</a></p>
+				</div>
+			</div>
+			
+			<div slot='footer'></div>
+		</div>
+	</modal>
   </body>
 </html>

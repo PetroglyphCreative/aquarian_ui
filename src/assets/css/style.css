@@ -208,6 +208,7 @@ button.callout:hover {
   transition:background-color 0.5s ease;
 }
 
+
  .greet-form .fui-btn, .greet-form .fui-submit{
 	 @apply  font-bold py-2 px-4 rounded bg-turquoise-500 text-white border-turquoise-600 border;
 }
@@ -415,7 +416,9 @@ a .card  p.date{
 .back a p {
     @apply font-normal text-gray-900;
 }
+header .dropdown-box {
 
+}
 header.top{
   
 }
@@ -470,6 +473,10 @@ header .menu a:hover, header .menu a:active{
 .change .bar3 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
+}
+header .dropdown-box {
+  max-width:500px;
+  position:absolute;
 }
 .home-callouts {
   @apply ml-auto mr-auto;
