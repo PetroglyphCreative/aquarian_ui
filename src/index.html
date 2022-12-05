@@ -35,11 +35,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</a>
 				</li>
 				<li class=" primary_nav  md:flex md:order-last md:justify-around md:w-full lg:w-auto lg:order-none border-box items-center" v-bind:class="{'block': m_showing, 'hidden': !m_showing}">
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl  px-12 py-3 md:text-lg md:px-6 md:py-1 lg:px-2 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 " v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='process' data-menutitle='Process and Services'>Our Process</button>
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl  px-12 py-3 md:text-lg md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 " v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='process' data-menutitle='Process and Services'>Our Process</button>
 								<div class='vertical-menu' data-nav='process' data-menu-place='header' v-bind:style="{ display: display.process }">
 									<h5 class='text-large md:text-m font-light block mb-2 ml-6 md:ml-0'>Web Design &amp; Development</h5>
 								</div>	
-								<div class='p-4  vertical-menu' data-nav='process' data-menu-place='left' v-bind:style="{ display: display.process }">
+								<div class='p-4  vertical-menu items-center' data-nav='process' data-menu-place='left' v-bind:style="{ display: display.process }">
+									<h6 class='text-large md:text-m font-light block mb-2 ml-6 md:ml-0 border-b-4 border-red-200'>Our Process</h6>
 									<ul class="subnav left" >
 									
 									<li><a href="#" >Step 1: Stabilize and Secure</a></li>
@@ -62,54 +63,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										
 									</ul>
 								</div>
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-2 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0" v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='work' data-menutitle='See our work'>Work</button>
-								<div class='p-4 vertical-menu' data-nav='work' data-menu-place='left' v-bind:style="{ display: display.work }">
-									<ul class="subnav left">
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1  lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0" v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='work' data-menutitle='See our work'>Work</button>
+								<div class='p-4 vertical-menu' data-nav='work' data-menu-place='header' v-bind:style="{ display: display.work }">
+									<ul class="subnav ">
 										<li><a href="/support-groups">Work Examples</a></li>
 									
 										<li><a href="#">test</a></li>
 									
 									</ul>
 								</div>
-								<div  data-nav='work' data-menu-place='right' v-bind:style="{ display: display.work }" class="subnav right ">
-									<ul class="subnav right my-4 utility" >
-									<li><a href="/calendar" class="highlight">Full Calendar View</a></li>
+			
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0"  v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='blog' data-menutitle='Postcards Blog'>Postcards Blog</button>
+								<div class='vertical-menu' data-nav='blog' data-menu-place='header' v-bind:style="{ display: display.blog }">
+									<form class='clearfix flex flex-row flex-nowrap'  action="{# url('search/tips') #}">
+										<input name="q" type='text' placeholder="Search" >
+										<button type='submit' class='px-6 py-2 border rounded text-white text-bold bg-teal-700  hover:bg-teal-600 block md:inline-block text-center ml-0 mr-4 right float-right'>Go</button>
+									</form>
+									<h4 ></h4>
+									<ul class="subnav " >
+										<li><a href="#">History &amp; Mission</a></li>
+										<li><a href="#">Our Values</a></li>
+										<li><a href="#">Experience &amp; Guarantees</a></li>
+										<li><a href="#">History &amp; Mission</a></li>
+									<li><a href="#">Our Values</a></li>
+									<li><a href="#">Experience &amp; Guarantees</a></li>
 									</ul>
 								</div>
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-2 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0"  v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='blog' data-menutitle='Postcards Blog'>Postcards Blog</button>
-								<div class='p-4 vertical-menu' data-nav='self-help' data-menu-place='left' v-bind:style="{ display: display.blog }">
-									<ul class="subnav left">
-										subnav left
-										
-									</ul>
+								<div  data-nav='blog' data-menu-place='footer' v-bind:style="{ display: display.blog}" >
+									<h5 class='font-light text-medium mb-2 mt-2'><a href="/blog">Postcards Blog Home</a></h5>
+									
 								</div>
-								<div class="p-4 vertical-menu" data-nav='self-help' data-menu-place='right' v-bind:style="{ display: display.blog }">
-									<div class="subnav right ">
-										<div class = 'utility'>
-										<form class='clearfix'  action="{# url('search/tips') #}">
-											<input name="q" type='text' placeholder="Search" >
-											<button type='submit' class='px-8 py-3 border rounded text-white text-bold bg-teal-700  hover:bg-teal-600 m-1 block md:inline-block text-center ml-0 mr-4 right float-right'>Go</button>
-										</form>
-										<a href="#" class='highlight'>Latest Postcards</a>
-										</div>
-										<ul class="rightside-categories md:ml-8" >
-										right side
-										</ul>
-									</div>
-								</div>
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-2 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0" v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='about' data-menutitle='About Us'>Who We are</button>
+								
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0" v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='about' data-menutitle='About Us'>Who We are</button>
 								<div class='vertical-menu p-4' data-nav='about' data-menu-place='left' v-bind:style="{ display: display.about}">
 									<ul class="subnav left" >
-										
-										  <li><a href="#">thiird third</a></li>
-									
+										<li><a href="#">History &amp; Mission</a></li>
+										<li><a href="#">Our Values</a></li>
+										<li class="whitespace-nowrap"><a href="#" class="whitespace-nowrap">Experience &amp; Guarantees</a></li>
 									</ul>
 								</div>
 								<div class="vertical-menu" data-nav='about' data-menu-place='right' v-bind:style="{ display: display.about}" >
+									<h5 class='text-large md:text-m font-light block mb-2 ml-6 md:ml-0 border-b-4 border-red-200'>Office:</h5>
 									<ul class="subnav right mb-4 utility" >
-										<li class="mb-4"><a href="/locations">Based in Albuquerque, NM</a></li>
-									
-										  <li><a href="#">test test</a></li>
+										<li class="mb-4"><a href="/locations">Albuquerque, NM</a></li>
+										<li><a href="#">Working here</a></li>
 									
 									</ul>												
 								</div>
@@ -117,6 +114,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									<h5 class='font-light text-medium mb-2'>Footer Content</h5>
 									
 								</div>
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0" v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='contact' data-menutitle='Points of Contact'>Get In Touch</button>
+								<div class='vertical-menu p-4' data-nav='contact' data-menu-place='header' v-bind:style="{ display: display.contact}">
+									<ul class="subnav " >
+										<li><a href="#">Contact Page</a></li>
+										<li><a href="#">Call Us</a></li>
+										<li><a href="#">Email Us</a></li>
+									
+									</ul>
+								</div>
+								<div  data-nav='contact' data-menu-place='footer' v-bind:style="{ display: display.contact}" class="flex flex-row justify-around" >
+										<a href="https://twitter.com/artnweb" class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" title="Aquarian Web Studio on Twitter"><i class="icon-twitter"></i></a>
+										<a class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" href="https://www.facebook.com/aquarianwebstudio" title="Aquarian Web Studio on Facebook"><i class="icon-facebook"></i></a>
+										<a class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" href="https://www.linkedin.com/company/aquarian-web-studio" title="Aquarian Web Studio on LinkedIn"><i class="icon-linkedin"></i></a>
+										<a class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" href="https://github.com/petroglyphcode" title="Petroglyph UI and more on Github"><i class="icon-github"></i></a>
+												
+								</div>
+								
 								
 				</li>
 				<li class="secondary_nav  md:flex md:justify-end md:w-1/2 lg:w-auto items-center" v-bind:class="{'block': m_showing, 'hidden': !m_showing}">
@@ -129,28 +143,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								   c-4.014,4.013-5.467,8.562-4.321,13.52c0.956,4.132,3.742,8.529,8.282,13.068l14.705,14.705c5.746,5.746,11.224,8.66,16.282,8.66
 								   c0,0,0,0,0.001,0c3.72,0,7.188-1.581,10.305-4.698l2.537-2.537C54.033,45.163,54.383,42.833,53.364,40.908z"/></a>
 								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 font-medium block md:flex mr-auto ml-auto md:m-0" id="show-modal" @click="showModal = true">Newsletter</button>
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-2 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0" v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='contact' data-menutitle='Points of Contact'>Get In Touch</button>
-								<div class='vertical-menu p-4' data-nav='contact' data-menu-place='left' v-bind:style="{ display: display.contact}">
-									<ul class="subnav left" >
-										<li><a href="#">Contact Page</a></li>
-										  <li><a href="#">Call Us</a></li>
-										  <li><a href="#">Email Us</a></li>
-									
-									</ul>
-								</div>
+								
 				</li>
 							
 			</ul>
 			<!--<dropdown-holder></dropdown-holder>-->
 			<div class="dropdown-holder relative  bg-white w-full block z-20" id="menuroot" >
 				<div class="dropdown-point"></div>
-					<div class="dropdown-box border-2 border-turquoise-300 bg-white p-4" id='menubox' style='' v-on:mouseout='hideboard' v-on:mouseover="hoverboard" v-bind:style="{ left: menu_lpos + 'px', display: menudisplay }" v-bind:class="menu.name">
+					<div class="dropdown-box border-2 border-turquoise-300 bg-white p-4  gap-1" id='menubox' style='' v-on:mouseout='hideboard' v-on:mouseover="hoverboard" v-bind:style="{ left: menu_lpos + 'px', display: menudisplay }" v-bind:class="menu.name">
 						<h4 class='font-display text-semibold text-prussianblue-500 text-2xl block align-left w-full mb-4 '>{{menu.title}}</h4>
 						
 						<div class='header w-full' id='menuheader' v-html='menu.header'></div>
 						<div class="w-full flex">
-						<div class='menu-left w-1/2' id='menuleft' v-html='menu.left'></div>
-						<div class='menu-right w-1/2' id='menuright' v-html='menu.right'></div>
+						<div class='menu-left w-1/2 flex flex-col justify-center md:mr-1' id='menuleft' v-html='menu.left'></div>
+						<div class='menu-right w-1/2 flex flex-col justify-center md:ml-1' id='menuright' v-html='menu.right'></div>
 						</div>
 						<div class='footer w-full' id='menufooter' v-html='menu.footer'></div>
 						

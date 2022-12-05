@@ -478,6 +478,16 @@ header .dropdown-box {
   max-width:500px;
   position:absolute;
 }
+.dropdown-box .subnav li{
+  @apply my-2 w-full border-b border-gray-100 ;
+}
+.dropdown-box .subnav li a{
+  @apply py-2 px-2 w-full  flex;
+}
+.dropdown-box .subnav li a:hover {
+  @apply  bg-orange-100 text-gray-900;
+}
+.dropdown-box input { line-height: 1rem;  }
 .home-callouts {
   @apply ml-auto mr-auto;
 }
