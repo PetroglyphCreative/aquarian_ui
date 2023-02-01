@@ -181,7 +181,7 @@ var thing = new Vue({
   },
   movemenu: function(event)  { //grabs which menu and opens it from open on another menu
     // menu has to be open for this to work
-    console.log('moving');
+    //console.log('moving');
     if (!this.mobile){
     if (this.showing === false){
       return;
