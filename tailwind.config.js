@@ -1,4 +1,11 @@
 module.exports = {
+	purge: [
+		'./src/**/*.html',
+		'../deploy/templates/*.html',
+		'../deploy/templates/**/*.html',
+		'../deploy/templates/**/*.twig',
+		'../deploy/templates/_components/\_*.twig'
+	  ],
   theme: {
     screens: {
       'sm': '640px',

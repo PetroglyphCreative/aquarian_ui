@@ -34,13 +34,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								  <div class="bar3"></div>
 								</a>
 				</li>
-				<li class=" primary_nav  md:flex md:order-last md:justify-around md:w-full lg:w-auto lg:order-none border-box items-center" v-bind:class="{'block': m_showing, 'hidden': !m_showing}">
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl  px-12 py-3 md:text-lg md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 " v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='process' data-menutitle='Process and Services'>Our Process</button>
+				<li class=" primary_nav  md:flex md:order-last md:justify-around md:w-full lg:w-auto lg:order-none border-box items-center" v-bind:class="{'block': m_showing, 'hidden': !m_showing}">{{showing}}
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl  px-12 py-3 md:text-lg md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 " v-on:click="togglemenu"  data-menu='process' data-menutitle='Process and Services'>Our Process</button>
 								<div class='vertical-menu' data-nav='process' data-menu-place='header' v-bind:style="{ display: display.process }">
-									<h5 class='text-large md:text-m font-light block mb-2 ml-6 md:ml-0'>Web Design &amp; Development</h5>
+									<h5 class='text-large text-center invisible md:visible md:text-left md:text-m font-light block mb-2 md:ml-0'>Web Design &amp; Development</h5>
 								</div>	
-								<div class='p-4  vertical-menu items-center' data-nav='process' data-menu-place='left' v-bind:style="{ display: display.process }">
-									<h6 class='text-large md:text-m font-light block mb-2 ml-6 md:ml-0 border-b-4 border-red-200'>Our Process</h6>
+								<div class='p-4 md:p-0 vertical-menu items-center' data-nav='process' data-menu-place='left' v-bind:style="{ display: display.process }">
+									<h6 class='text-large md:text-m text-gray-700 font-weight-500 block mb-2 pb-2 md:pb-0  md:ml-0 border-b-4 border-red-200'>Our Process</h6>
 									<ul class="subnav left" >
 									
 									<li><a href="/web-design-process#step1:StabilizeAndSecure" >Step 1: Stabilize and Secure</a></li>
@@ -49,8 +49,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									<li><a href="/web-design-process#nicheServices" >Niche Services</a></li>
 									</ul>
 								</div>
-								<div class=' vertical-menu' data-nav='process' data-menu-place='right' v-bind:style="{ display: display.process }">
-									<ul class="subnav right utility" >
+								<div class='px-4 md:p-0 vertical-menu' data-nav='process' data-menu-place='right' v-bind:style="{ display: display.process }">
+									<ul class="subnav right" >
 										
 										<li><a href="/web-design-process/website-problem-rescue">Website Problem Rescue</a></li>
 										<li><a href="/web-design-process/front-end-feature-design-and-translation">Front-end Feature Design and Translation</a></li>
@@ -63,7 +63,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										
 									</ul>
 								</div>
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1  lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0" v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='work' data-menutitle='See our work'>Work</button>
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1  lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 " v-on:click="togglemenu"  data-menu='work' data-menutitle='See our work'>Work</button>
 								<div class='p-4 vertical-menu' data-nav='work' data-menu-place='header' v-bind:style="{ display: display.work }">
 									<ul class="subnav ">
 										<li><a href="/work">Work Examples</a></li>
@@ -73,51 +73,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									</ul>
 								</div>
 			
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0"  v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='blog' data-menutitle='Postcards Blog'>Postcards Blog</button>
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0"   v-on:click="togglemenu"  data-menu='blog' data-menutitle='Postcards Blog'>Postcards Blog</button>
 								<div class='vertical-menu' data-nav='blog' data-menu-place='header' v-bind:style="{ display: display.blog }">
-									<form class='clearfix flex flex-row flex-nowrap'  action="{# url('search') #}">
-										<input name="q" type='text' placeholder="Search layout sample" >
-										<button type='submit' class='px-6 py-2 border rounded text-white text-bold bg-teal-700  hover:bg-teal-600 block md:inline-block text-center ml-0 mr-4 right float-right' disabled>Go</button>
+									<form class='clearfix flex flex-row flex-nowrap my-3'  action="{# url('search/tips') #}">
+										<input name="q" type='text' placeholder="Search" >
+										<button type='submit' class='px-6 py-2 border rounded text-white text-bold bg-teal-700  hover:bg-teal-600 block md:inline-block text-center ml-0 mr-4 right float-right'>Go</button>
 									</form>
-									<h4 >Stand-in content ahoy!</h4>
+									<h4 ></h4>
 									<ul class="subnav " >
-										<li><a href="/about-aquarian">History &amp; Mission</a></li>
-										<li><a href="/about-aquarian/our-values">Our Values</a></li>
+										<li><a href="#">History &amp; Mission</a></li>
+										<li><a href="#">Our Values</a></li>
 										<li><a href="#">Experience &amp; Guarantees</a></li>
-
+										<li><a href="#">History &amp; Mission</a></li>
+									<li><a href="#">Our Values</a></li>
+									<li><a href="#">Experience &amp; Guarantees</a></li>
+									<li><a href="/blog">Postcards Blog Home</a></li>
 									</ul>
 								</div>
-								<div  data-nav='blog' data-menu-place='footer' v-bind:style="{ display: display.blog}" >
-									<h5 class='font-light text-medium mb-2 mt-2'><a href="/blog">Postcards Blog Home</a></h5>
-									
-								</div>
-								
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0" v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='about' data-menutitle='About Us'>Who We are</button>
+							
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 "  v-on:click="togglemenu"  data-menu='about' data-menutitle='About Us'>Who We are</button>
 								<div class='vertical-menu p-4' data-nav='about' data-menu-place='left' v-bind:style="{ display: display.about}">
 									<ul class="subnav left" >
-										<li><a href="/about-aquarian">History &amp; Mission</a></li>
-										<li><a href="/about-aquarian/our-values">Our Values</a></li>
-										<li class="whitespace-nowrap"><a href="/about-aquarian/our-values" class="whitespace-nowrap">Experience &amp; Guarantees</a></li>
+										<li><a href="#">History &amp; Mission</a></li>
+										<li><a href="#">Our Values</a></li>
+										<li class="whitespace-nowrap"><a href="#" class="whitespace-nowrap">Experience &amp; Guarantees</a></li>
 									</ul>
 								</div>
-								<div class="vertical-menu" data-nav='about' data-menu-place='right' v-bind:style="{ display: display.about}" >
-									<h5 class='text-large md:text-m font-light block mb-2 ml-6 md:ml-0 border-b-4 border-red-200'>Office:</h5>
+								<div class="vertical-menu p-4" data-nav='about' data-menu-place='right' v-bind:style="{ display: display.about}" >
+									<h6 class='text-xl md:text-m text-gray-700 font-weight-500 block mb-2 pb-2 md:pb-0  md:ml-0 border-b-4 border-red-200'>Office:</h6>
 									<ul class="subnav right mb-4 utility" >
-										<li class="mb-4"><a href="/about-aquarian/albuquerque-nm">Albuquerque, NM</a></li>
-										<li><a href="/about-aquarian/working-here">Working here</a></li>
+										<li class=""><a href="/locations">Albuquerque, NM</a></li>
+										<li><a href="#">Working here</a></li>
 									
 									</ul>												
 								</div>
-								<div  data-nav='about' data-menu-place='footer' v-bind:style="{ display: display.about}" >
-									<h5 class='font-light text-medium mb-2'>Footer Content</h5>
-									
-								</div>
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0" v-on:mouseover="hovermenu" v-on:click="togglemenu" v-on:mouseout='hideboard' data-menu='contact' data-menutitle='Points of Contact'>Get In Touch</button>
+								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 " v-on:click="togglemenu"  data-menu='contact' data-menutitle='Points of Contact'>Get In Touch</button>
 								<div class='vertical-menu p-4' data-nav='contact' data-menu-place='header' v-bind:style="{ display: display.contact}">
 									<ul class="subnav " >
-										<li><a href="/contact">Contact Page</a></li>
-										<li><a href="/contact">Call Us</a></li>
-										<li><a href="/contact">Email Us</a></li>
+										<li><a href="#">Contact Page</a></li>
+										<li><a href="#">Call Us</a></li>
+										<li><a href="#">Email Us</a></li>
 									
 									</ul>
 								</div>
@@ -132,7 +127,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								
 				</li>
 				<li class="secondary_nav  md:flex md:justify-end md:w-1/2 lg:w-auto items-center" v-bind:class="{'block': m_showing, 'hidden': !m_showing}">
-								<a class="phone-btn flex invisible h-0 md:block md:visible align-top md:h-auto w-10 border border-gray-200 rounded md:p-2 bg-teal-700" title="Call Us Now" href='tel:2159225683;100'><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								<a class="phone-btn flex invisible h-0 md:block md:visible align-top md:h-auto w-10 border border-gray-200 rounded md:p-2 bg-teal-700" title="Call Us Now" href='tel:5056522250'><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 									viewBox="0 0 53.942 53.942" style="enable-background:new 0 0 53.942 53.942;" xml:space="preserve">
 							   <path style="fill:#fff;fill-rule:evenodd;clip-rule:evenodd;" d="M53.364,40.908c-2.008-3.796-8.981-7.912-9.288-8.092c-0.896-0.51-1.831-0.78-2.706-0.78c-1.301,0-2.366,0.596-3.011,1.68
 								   c-1.02,1.22-2.285,2.646-2.592,2.867c-2.376,1.612-4.236,1.429-6.294-0.629L17.987,24.467c-2.045-2.045-2.233-3.928-0.632-6.291
@@ -146,7 +141,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							
 			</ul>
 			<!--<dropdown-holder></dropdown-holder>-->
-			<div class="dropdown-holder relative  bg-white w-full block z-20" id="menuroot" >
+			<div class="dropdown-holder relative  bg-white w-full block z-20 " id="menuroot" >
 				<div class="dropdown-point"></div>
 					<div class="dropdown-box border-2 border-turquoise-300 bg-white p-4  gap-1" id='menubox' style='' v-on:mouseout='hideboard' v-on:mouseover="hoverboard" v-bind:style="{ left: menu_lpos + 'px', display: menudisplay }" v-bind:class="menu.name">
 						<h4 class='font-display text-semibold text-prussianblue-500 text-2xl block align-left w-full mb-4 '>{{menu.title}}</h4>

@@ -101,7 +101,7 @@ font-family: "Merriweather Sans";
 
 @tailwind utilities;
 a{ @apply text-turquoise-800  ;}
-p a {@apply border-b-2 border-orange-400;}
+p a, .read  li a {@apply border-b-2 border-orange-400;}
 hr {border-width:0;}
 
 th{
@@ -391,7 +391,10 @@ a .card  p.date{
  .card.dark h3, .card.dark h4 {
 	@apply text-orange-500;
 }
-.postcard {@apply border-2 border-gray-200 shadow-lg;}
+.postcard {
+  width:480px;
+  height:360px;
+  @apply border-2 border-gray-200 shadow-lg;}
 .postcard::after {
     content: ""; 
     opacity: 0.1;
@@ -474,12 +477,19 @@ header .menu a:hover, header .menu a:active{
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
 }
+.vertical-menu {
+  @apply max-w-sm ml-auto mr-auto;
+}
+.subnav li {
+  @apply text-xl py-3;
+}
+.subnav li a{ @apply text-gray-700}
 header .dropdown-box {
-  max-width:500px;
+  max-width:700px;
   position:absolute;
 }
 .dropdown-box .subnav li{
-  @apply my-2 w-full border-b border-gray-100 ;
+  @apply my-2 w-full border-b border-gray-100 text-large py-0;
 }
 .dropdown-box .subnav li a{
   @apply py-2 px-2 w-full  flex;
@@ -592,6 +602,10 @@ h1 .logo.lock-up {
 
   }
 
+  .postcard {
+    width:508px;
+    height:381px;
+  }
 
 }
 @media screen and (min-width: 768px){
@@ -601,7 +615,10 @@ h1 .logo.lock-up {
 header .menu a {
   font-size:16px;
  }
-
+ .postcard {
+  width:512px;
+  height:384px;
+}
 }
 @media screen and (min-width: 768px) and (max-width: 1024px){
 
@@ -623,10 +640,15 @@ header .menu a {
   font-size:2.5rem;
   line-height:5rem;
   @apply text-center;
-
+  
 }
+.lg\:flex-row-reverse { flex-direction: row-reverse; }
 .standout-headline {
   @apply font-bold text-xl;
+}
+.postcard {
+  width:572px;
+  height:429px;
 }
 }
 @media screen and (min-width: 1524px) {
