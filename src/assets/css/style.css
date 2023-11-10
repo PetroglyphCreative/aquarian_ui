@@ -189,15 +189,17 @@ button {
 button:hover {
   @apply bg-gray-100;
 }
-button.btn-lg{
-	@apply py-4 px-10 text-large ;
+button.btn-lg, .btn-lg button.fui-btn.fui-submit{
+	@apply py-4 px-10 text-large font-bold ;
 }
-button.callout {
+
+
+button.callout, button.fui-btn.fui-submit {
   transition:all 0.5s ;
   white-space: nowrap;
   @apply my-8 my-4 flex   max-w-sm border-l-2 border-r-2 border-turquoise-600 bg-turquoise-400 text-white;
 }
-button.callout:hover {
+button.callout:hover, button.fui-btn.fui-submit:hover  {
   transform:scale(1.1,1.1);
     -webkit-transform:scale(1.1,1.1);
     -moz-transform:scale(1.1,1.1);
@@ -479,6 +481,9 @@ header .menu a:hover, header .menu a:active{
 }
 .vertical-menu {
   @apply max-w-sm ml-auto mr-auto;
+}
+.primary_nav button {
+  white-space:no-wrap;
 }
 .subnav li {
   @apply text-xl py-3;
