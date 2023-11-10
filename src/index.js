@@ -1,11 +1,8 @@
 import _ from 'lodash';
+import  { createApp } from 'vue/dist/vue.esm-bundler.js';
 import img from './assets/img/sometimes_800.jpg';
 import tw_logo from './assets/img/tw-logo-white.svg';
-import Vue from 'vue/dist/vue.js';
-
-Vue.component("modal", {
-  template: "#modal-template"
-});
+//const { compile } = require('@vue/compiler-sfc');
 
 function component() {
   //const element = document.createElement('div');
@@ -69,39 +66,40 @@ let collapsing = document.getElementsByClassName("collapsing");
   } 
 }
 // MENU
-var thing = new Vue({
-  el: 'header#top',
-  data: {
+var topNavigation = createApp({
+  data() {
+    return {
      locations: [],
      showModal: false,
 
-   menu: {
-    'title':null,
-    'name':null,
-    'header':null,
-    'left':null,
-    'right':null, 
-    'footer':null,
-    'width':0
-   },
-   display:{
-     process: 'none',
-     work: 'none',
-     blog: 'none',
-     about: 'none',
-     contact: 'none',
-   },
-   hovering: false,
-   showing: false,
-   m_showing:  false,
-  // 
-   menu_tpo: 0,
-   menu_lpos: 0,
-   menu_cpos: 0,
-   menudisplay:'none', //CSS switch from none to block for menu container
-   mobile: window.innerWidth >767 ? false: true,
-   
-},
+      menu: {
+        'title':null,
+        'name':null,
+        'header':null,
+        'left':null,
+        'right':null, 
+        'footer':null,
+        'width':0
+      },
+      display:{
+        process: 'none',
+        work: 'none',
+        blog: 'none',
+        about: 'none',
+        contact: 'none',
+      },
+      hovering: false,
+      showing: false,
+      m_showing:  false,
+      // 
+      menu_tpo: 0,
+      menu_lpos: 0,
+      menu_cpos: 0,
+      menudisplay:'none', //CSS switch from none to block for menu container
+      mobile: window.innerWidth >767 ? false: true,
+      
+    }
+  },
   methods: {
     hovermenu: function (event) { //hovering buttons - open or move the menu
       console.log('hover triggered');
@@ -279,7 +277,19 @@ var thing = new Vue({
     this.m_showing = this.m_showing === true ? false : true; //change the class
     }
     }
-  });
+  }).mount('header#top');
+  
+  
+  var modal = createApp({
+
+    data(){
+      return {
+        showModal:false,
+        fun:false
+      }
+    }
+ 
+}).mount('#calloutModal');
   //Lazyload Images
 document.addEventListener("DOMContentLoaded", function() {
 	let lazyloadImages = document.querySelectorAll("img.lazyload");
