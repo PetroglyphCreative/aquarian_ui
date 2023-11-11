@@ -96,7 +96,7 @@ font-family: "Merriweather Sans";
   font-style:italic;
   src: url("../fonts/libre-franklin/librefranklin-bolditalic.ttf") format("truetype");
 }
-@import url("customwebfonts.css"); /* Using a url */
+
 @tailwind components;
 
 @tailwind utilities;

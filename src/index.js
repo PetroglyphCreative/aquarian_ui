@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import  { createApp } from 'vue/dist/vue.esm-bundler.js';
 import img from './assets/img/sometimes_800.jpg';
+import logo from './assets/img/just-sailboat.svg';
 import tw_logo from './assets/img/tw-logo-white.svg';
 //const { compile } = require('@vue/compiler-sfc');
 
