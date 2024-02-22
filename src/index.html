@@ -5,6 +5,24 @@
     <title>Aquarian Web Studio UI Kit</title>
     <meta name="description" content="A live code set demonstrating UI elements for Aquarian Web Studio built from WebPack and Tailwind CSS. Free to use and download.">
     <link rel="canonical" href="https://www.aquarianwebdesign.com/ui/" />
+		<!-- add the following with super large images to help with the first contentful paint.
+			<link rel='preload' as='image' href='url'>  
+			if <picture> is used, then it would look more like this:
+			<link rel="preload" as="image" href="biggestImage.png" media="(min-width:1600px)">
+			<link rel="preload" as="image" href="largeImage.png" media="(min-width:1100px)">
+			<link rel="preload" as="image" href="mediumImage" media="(min-width:800px)">
+			<link rel="preload" as="image" href="smallImage.png" media="(min-width:600px)">
+			<link rel="preload" as="image" href="fallbackImage.png">
+		-->
+		<!-- the following will help any page loading flash of the menu, also related to the FCP.
+			This works because the JS is already telling these div elements to display on click, but
+			this forcefully will hide them until that happens.
+		-->
+		<style>
+			.primary_nav > div, .secondary_nav > div {
+				display: none;
+			}
+		</style>
   </head>
 
   <body>
