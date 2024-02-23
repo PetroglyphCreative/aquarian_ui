@@ -833,11 +833,6 @@ h1 .logo.lock-up {
 
 }
 
-@media screen and (max-width: 767px) {
-  .hideIt {
-    display: block;
-  }
-}
 
 @media screen and (min-width: 768px) {
   .menu-toggle {
