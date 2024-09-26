@@ -322,3 +322,24 @@ document.addEventListener("DOMContentLoaded", function() {
 	window.addEventListener("orientationChange", lazyload);
 	lazyload();
   });
+
+  function removeHide(){
+    var thisViewPort = window.innerWidth;;
+    if(thisViewPort < 768) {
+      document.querySelector('#swapOne').classList.remove('hideIt');
+      document.querySelector('#swapOne').classList.add('block');
+      document.querySelector('#swapTwo').classList.remove('hideIt');
+      document.querySelector('#swapTwo').classList.add('block');
+      document.querySelector('#swapThree').classList.remove('hideIt');
+      document.querySelector('#swapThree').classList.add('block');
+      document.querySelector('#swapFour').classList.remove('hideIt');
+      document.querySelector('#swapFour').classList.add('block');
+      document.querySelector('#swapFive').classList.remove('hideIt');
+      document.querySelector('#swapFive').classList.add('block');
+      document.querySelector('#swapSix').classList.remove('hideIt');
+      document.querySelector('#swapSix').classList.add('block');
+      document.querySelector('#swapSeven').classList.remove('hideIt');
+      document.querySelector('#swapSeven').classList.add('block');
+    }
+  }
+  removeHide();
