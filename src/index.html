@@ -117,10 +117,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									</ul>
 								</div>
 					     		<div  data-nav='contact' data-menu-place='footer' v-bind:style="{ display: display.contact}" class="flex flex-row justify-around" >
-										<a href="https://x.com/artnweb" class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" title="Aquarian Web Studio on Twitter"><i class="icon-twitter"></i></a>
-										<a class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" href="https://www.facebook.com/aquarianwebstudio" title="Aquarian Web Studio on Facebook"><i class="icon-facebook"></i></a>
-										<a class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" href="https://www.linkedin.com/company/aquarian-web-studio" title="Aquarian Web Studio on LinkedIn"><i class="icon-linkedin"></i></a>
-										<a class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" href="https://github.com/petroglyphcode" title="Petroglyph UI and more on Github"><i class="icon-github"></i></a>
+										<a href="https://x.com/artnweb" class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" title="Aquarian Web Studio on Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+										<a class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" href="https://www.facebook.com/aquarianwebstudio" title="Aquarian Web Studio on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+										<a class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" href="https://www.linkedin.com/company/aquarian-web-studio" title="Aquarian Web Studio on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+										<a class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" href="https://github.com/petroglyphcode" title="Petroglyph UI and more on Github"><i class="fa-brands fa-github"></i></a>
 												
 								</div>
 								
@@ -486,7 +486,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<dt class="text-lg">
 				  <!-- Expand/collapse question button -->
 				  <button type="button" class="flex w-full items-start justify-between text-left text-gray-400" aria-controls="faq-website-problem-rescue" aria-expanded="false">
-					<span class="font-medium text-gray-900">Website Problem Rescue</span>
+					
+					<span class="font-medium text-gray-900"><i class="fa-regular fa-life-ring text-3xl text-turquoise-700 font-light mr-3 align-bottom"></i>Website Problem Rescue</span>
 					<span class="ml-6 flex h-7 items-center">
 					  <!--
 						Expand/collapse icon, toggle classes based on question open state.
@@ -513,7 +514,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<dt class="text-lg">
 				  <!-- Expand/collapse question button -->
 				  <button type="button" class="flex w-full items-start justify-between text-left text-gray-400" aria-controls="faq-front-end-feature-design-and-translation" aria-expanded="false">
-					<span class="font-medium text-gray-900">Front-end Feature Design and Translation</span>
+					<span class="font-medium text-gray-900"><i class="fa-solid fa-brush text-3xl text-turquoise-700 font-light mr-3 align-bottom"></i>Front-end Feature Design and Translation</span>
 					<span class="ml-6 flex h-7 items-center">
 					  <!--
 						Expand/collapse icon, toggle classes based on question open state.
@@ -540,7 +541,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<dt class="text-lg">
 				  <!-- Expand/collapse question button -->
 				  <button type="button" class="flex w-full items-start justify-between text-left text-gray-400" aria-controls="faq-content-management-system-migration" aria-expanded="false">
-					<span class="font-medium text-gray-900">Content Management System Migration</span>
+					<span class="font-medium text-gray-900"><i class="fa-solid fa-truck-moving text-3xl text-turquoise-700 font-light mr-3 align-bottom"></i>Content Management System Migration</span>
 					<span class="ml-6 flex h-7 items-center">
 					  <!--
 						Expand/collapse icon, toggle classes based on question open state.
@@ -562,18 +563,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</dd>
 			</div>
 			
-							</dl>
+		</dl>
 		<h3>Tertiary heading (h3)</h3>
 		<blockquote cite="https://www.huxley.net/bnw/four.html">
 			<p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
 			<footer>—Aldous Huxley, <cite>Brave New World</cite></footer>
 		</blockquote>
 		<p>Aquarian Web Studio enables clients to publish anything they want, whenever they want, as they desire to do so by giving small to medium sized organizations the ultimate flexibility and scaling web development options to fit growing needs. We have implemented hundreds of additional features and changes seamlessly into clients’ websites since 2010.</p>
-		<h4 class="">Reminder heading or punchline (h4)</h4>
+		<h4 class="">Let&rsquo;s do some more special cases (h4)</h4>
+		<code>
+			$config['cp_url'] = '{base_url}/admin.php';
+		</code>
+		<code>
+			/** Hide default login */
+add_action( 'init', 'marounmelhem_hide_login' );
+function marounmelhem_hide_login() {
+
+    //Only proceed for guests
+    if ( ! is_user_logged_in() ) {
+
+        //Getting current page
+        $current_url   = str_replace( '/', '', $_SERVER['REQUEST_URI'] );
+        $hiddenWpAdmin = 'new-secret-url'; //Change this to your new secret wp-admin url
+        $redirectNaTo  = '/';
+
+        //Checking if accessing correct login url
+        if ( $current_url == $hiddenWpAdmin ) {
+            wp_redirect( '/'.$hiddenWpAdmin.'.php' );
+            exit;
+        }
+
+        //Only allow requests to wp-login.php coming from correct login url
+        $adminToCheck = [
+            'wp-admin',
+            'wp-login.php'
+        ];
+        if (
+            in_array( $current_url, $adminToCheck )
+            &&
+            $_GET['action'] !== "logout"
+        ) {
+            wp_redirect( $redirectNaTo );
+            exit();
+        }
+    }
+}
+		</code>
 		<div class='max-w-md ml-auto mr-auto'>
 		<blockquote class="twitter-tweet ml-auto mr-auto"><p lang="en" dir="ltr">New tutorial: Install <a href="https://x.com/eecms?ref_src=twsrc%5Etfw">@eecms</a> for Security<a href="https://t.co/GtdcXYEH1E">https://t.co/GtdcXYEH1E</a></p>&mdash; Aquarian Web Studio (@artnweb) <a href="https://x.com/artnweb/status/1419797626396971009?ref_src=twsrc%5Etfw">July 26, 2021</a></blockquote> 
 		<script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
 		</div>
+		<div class="before-after flex">
+            <figure class="w-full lg:w-1/2">
+                                                                        <img src="https://www.aquarianwebdesign.com/assets/images/_490x330_crop_center-center_none/Screen-Shot-2022-08-22-at-1.00.45-PM.png" srcset="https://www.aquarianwebdesign.com/assets/images/_490x330_crop_center-center_none/Screen-Shot-2022-08-22-at-1.00.45-PM.png 1x, https://www.aquarianwebdesign.com/assets/images/_980x660_crop_center-center_none/Screen-Shot-2022-08-22-at-1.00.45-PM.png 2x" alt="Google Analytics 4 user analytics screen with filter menu">
+                                    <figcaption>Several useful and customizeable graphics exist on the default GA4 User Acquisition page.</figcaption>
+            </figure>
+            <figure class="mw-full lg:w-1/2">
+                                    <img src="https://www.aquarianwebdesign.com/assets/images/_490x330_crop_center-center_none/Screen-Shot-2022-08-22-at-1.00.34-PM.png" srcset="https://www.aquarianwebdesign.com/assets/images/_490x330_crop_center-center_none/Screen-Shot-2022-08-22-at-1.00.34-PM.png 1x, https://www.aquarianwebdesign.com/assets/images/_980x660_crop_center-center_none/Screen-Shot-2022-08-22-at-1.00.34-PM.png 2x" alt="Google Analytics 4 user analytics screen without filter menu">
+                                    <figcaption></figcaption>
+            </figure>
+        </div>
 		<p>Aquarian Web Studio offers a combined 40+ years of web problem solving for clients and is led by Caroline Blaker, a nationally renowned “tech lead” who guides efficient, focused contractors with her fifteen years of web creation. Caroline has twelve years’ experience programming in Wordpress, and has utilized ExpressionEngine for the benefit of her clients since version 1.6.3!</p>
 		<h5 class="">More info heading (h5)</h5>
   

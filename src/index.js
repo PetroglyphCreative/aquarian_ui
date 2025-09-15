@@ -1,9 +1,12 @@
 import _ from 'lodash';
 import  { createApp } from 'vue/dist/vue.esm-bundler.js';
+import { modal } from './components/modal.vue';
 import img from './assets/img/sometimes_800.jpg';
 import logo from './assets/img/just-sailboat.svg';
 import tw_logo from './assets/img/tw-logo-white.svg';
+
 //const { compile } = require('@vue/compiler-sfc');
+
 
 function component() {
   //const element = document.createElement('div');
@@ -280,17 +283,7 @@ var topNavigation = createApp({
     }
   }).mount('header#top');
   
-  
-  var modal = createApp({
 
-    data(){
-      return {
-        showModal:false,
-        fun:false
-      }
-    }
- 
-}).mount('#calloutModal');
   //Lazyload Images
 document.addEventListener("DOMContentLoaded", function() {
 	let lazyloadImages = document.querySelectorAll("img.lazyload");

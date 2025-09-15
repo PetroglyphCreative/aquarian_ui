@@ -1,6 +1,6 @@
 const path = require('path')
 const { compile } = require('@vue/compiler-sfc');
-
+const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
@@ -68,8 +68,9 @@ module.exports = {
      ],
   },
   plugins: [
+    new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'styles.css'
+      filename: '[name].css'
     }),
     new HtmlWebpackPlugin({
 	    filename: 'index.html',
