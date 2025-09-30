@@ -18,6 +18,8 @@
     "cross-env": "^5.1",
     "css-loader": "^5",
     "css-minimizer-webpack-plugin": "^6.0.0",
+    "html-loader": "^5.0.0",
+    "html-webpack-partials-plugin": "^0.8.0",
     "html-webpack-plugin": "^5.0.0",
     "mini-css-extract-plugin": "2.7.6",
     "postcss": "^8.4.33",

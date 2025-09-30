@@ -184,7 +184,7 @@ article .heading-l{
 	@apply font-display;
 }
 button {
-  @apply  font-bold py-2 px-4 rounded border border-gray-100;
+  @apply  font-bold py-2 px-4 rounded border border-gray-100 self-start self-baseline;
 }
 button:hover {
   @apply bg-gray-100 border border-gray-200;
@@ -197,7 +197,7 @@ button.btn-lg, .btn-lg button.fui-btn.fui-submit{
 button.callout, button.fui-btn.fui-submit {
   transition:all 0.5s ;
   white-space: nowrap;
-  @apply my-8 my-4 flex   max-w-sm border-l-2 border-r-2 border-turquoise-600 bg-turquoise-400 text-white;
+  @apply    max-w-sm border-l-2 border-r-2 border-turquoise-600 bg-turquoise-400 text-white;
 }
 button.callout:hover, button.fui-btn.fui-submit:hover  {
   transform:scale(1.1,1.1);
@@ -291,7 +291,7 @@ p.toobig{ min-width:91px;}
 .read h4 {@apply heading text-gray-600  my-8;}
 .read h5 {@apply heading-s text-gray-800 font-bold  my-8;}
 
-.read figure { @apply ml-auto mr-auto my-8 max-w-xl;}
+.read figure { @apply ml-auto mr-auto my-8 }
 .read ul {
    @apply  max-w-xl mr-auto ml-auto my-4 text-large leading-snug list-disc ;
    max-width:620px;
@@ -300,7 +300,7 @@ p.toobig{ min-width:91px;}
    @apply  max-w-xl mr-auto ml-auto my-4 text-large leading-snug list-decimal ;
    max-width:620px;
 }
-.read pre {@apply bg-gray-100 max-w-xl ml-auto mr-auto p-3;}
+
 .read figure.pageLead { width: 100%; @apply max-w-3xl;
 }
 .read figure.pageLead img{
@@ -334,7 +334,7 @@ figure figcaption, figure figcaption p, .read figure figcaption p {
 .read footer.page-foot a {
   @apply text-turquoise-200;
 }
-.read .before-after figure {@apply m-2;}
+.read .before-after figure {@apply m-2 w-full;}
 .read .collapsing {
   @apply max-w-2xl ml-auto mr-auto;
 }
@@ -347,6 +347,8 @@ code {
   white-space:pre;
   text-wrap: pretty;
 }
+.read pre {@apply  ml-auto mr-auto;}
+
 .read code {
   @apply max-w-2xl mr-auto ml-auto my-4 text-large;
 }
@@ -669,6 +671,7 @@ header .menu a {
   width:572px;
   height:429px;
 }
+.read .before-after figure {@apply w-1/2;}
 }
 @media screen and (min-width: 1524px) {
 

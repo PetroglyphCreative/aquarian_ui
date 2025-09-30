@@ -1,7 +1,7 @@
 const path = require('path')
 const { compile } = require('@vue/compiler-sfc');
 const { VueLoaderPlugin } = require('vue-loader');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
@@ -23,7 +23,8 @@ module.exports = {
   module: {
     
     rules: [
-	    {
+      
+        {
 	        test: /\.vue$/,
 	        use: 'vue-loader'
 	      },
@@ -76,6 +77,7 @@ module.exports = {
 	    filename: 'index.html',
       template: 'src/index.html'
     }),
+
   ],
   output: {
 	  filename:'[name].js',

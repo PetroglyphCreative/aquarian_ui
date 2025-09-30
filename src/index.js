@@ -1,11 +1,53 @@
 import _ from 'lodash';
 import  { createApp } from 'vue/dist/vue.esm-bundler.js';
-import { modal } from './components/modal.vue';
+import Modal from './components/modal.vue';
 import img from './assets/img/sometimes_800.jpg';
 import logo from './assets/img/just-sailboat.svg';
 import tw_logo from './assets/img/tw-logo-white.svg';
 
 //const { compile } = require('@vue/compiler-sfc');
+
+// const figures = document.querySelectorAll('figure');
+// for (const figure of figures ){
+//   figure.addEventListener("click", function(){
+//   showInModal(this)
+// });
+// }
+const articles = document.querySelectorAll('article.read');
+//window.console.log(articles.length);
+for (const article of articles){
+var articlefeatures = createApp({
+  data() {
+    return {
+      showModal: false,
+      modalContent: {}
+    }
+  },
+  mounted(){
+    window.console.log('article mounted');
+    article.classList.add('enhanced');
+  },
+  components:{
+    Modal
+  },
+  methods: {
+    openInModal(e){
+      this.showModal=true;
+      this.modalContent=e.target.closest('figure');
+      if (window.innerWidth >1023 && (this.modalContent.getElementsByTagName('img')[0].getAttribute('data-large')  !== null)){
+        this.modalContent.getElementsByTagName('img')[0].src = this.modalContent.getElementsByTagName('img')[0].getAttribute('data-large');
+      //console.log(this.modalContent.getElementsByTagName('img')[0].src)
+      }
+      window.console.log( this.showModal);
+
+    },
+    closeModal(){
+      this.showModal=false;
+    }
+  }
+}).mount(article);
+}
+
 
 
 function component() {
