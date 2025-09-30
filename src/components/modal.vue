@@ -31,6 +31,9 @@ const props = defineProps({
   content: {
     type: Object
   },
+  header:{
+    type: Object
+  }
 });
 
 const emit = defineEmits(['close']);
