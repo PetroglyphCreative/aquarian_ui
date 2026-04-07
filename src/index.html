@@ -7,74 +7,74 @@
     <link rel="canonical" href="https://www.aquarianwebdesign.com/ui/" />
   </head>
 
-  <body>
+  <body class="relative">
   <!-- Google Tag Manager -->
     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TJB28Q"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<header id='top' class='top border-gray-200 border-b-2 '>
+	<header id='top' class='top border-gray-200 border-b-2 z-10'>
 		<nav class="flex flex-col lg:flex-row items-center lg:justify-between lg:flex-wrap  py-4 px-6 border-gray-300 border-b-2 ">
-			<ul class="block flex flex-col w-full md:flex-row md:flex-wrap lg:flex-no-wrap lg:items-stretch lg:justify-between ">
+			<ul class="block flex flex-col w-full md:flex-row md:flex-wrap lg:flex-nowrap lg:items-stretch lg:justify-between ">
 				<li class=' flex text-center md:text-left md:w-1/2 lg:w-auto  justify-between' >
-								<div class="flex-grow">
-									<a href="/"   >
-								  <div class='logo lock-up mr-2'><span class='aquarian '>Aquarian<span class='web-studio '> Web Studio</span></span></div>
-									</a>
-								</div>
-								<a class="phone-btn md:hidden align-top h-12 w-12 border border-gray-200 rounded p-2 bg-teal-700" title="Call Us Now" href='tel:2159225683;100'><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					<div class="flex-grow">
+						<a href="/"   >
+							<div class='logo lock-up mr-2'><span class='aquarian '>Aquarian<span class='web-studio '> Web Studio</span></span></div>
+						</a>
+					</div>
+					<a class="phone-btn md:hidden align-top h-12 w-12 border border-gray-200 rounded p-2 bg-teal-700" title="Call Us Now" href='tel:5056522250'>
+						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 									viewBox="0 0 53.942 53.942" style="enable-background:new 0 0 53.942 53.942;" xml:space="preserve">
-							   <path style="fill:#fff;fill-rule:evenodd;clip-rule:evenodd;" d="M53.364,40.908c-2.008-3.796-8.981-7.912-9.288-8.092c-0.896-0.51-1.831-0.78-2.706-0.78c-1.301,0-2.366,0.596-3.011,1.68
+						<path style="fill:#fff;fill-rule:evenodd;clip-rule:evenodd;" d="M53.364,40.908c-2.008-3.796-8.981-7.912-9.288-8.092c-0.896-0.51-1.831-0.78-2.706-0.78c-1.301,0-2.366,0.596-3.011,1.68
 								   c-1.02,1.22-2.285,2.646-2.592,2.867c-2.376,1.612-4.236,1.429-6.294-0.629L17.987,24.467c-2.045-2.045-2.233-3.928-0.632-6.291
 								   c0.224-0.309,1.65-1.575,2.87-2.596c0.778-0.463,1.312-1.151,1.546-1.995c0.311-1.123,0.082-2.444-0.652-3.731
 								   c-0.173-0.296-4.291-7.27-8.085-9.277c-0.708-0.375-1.506-0.573-2.306-0.573c-1.318,0-2.558,0.514-3.49,1.445L4.7,3.986
 								   c-4.014,4.013-5.467,8.562-4.321,13.52c0.956,4.132,3.742,8.529,8.282,13.068l14.705,14.705c5.746,5.746,11.224,8.66,16.282,8.66
-								   c0,0,0,0,0.001,0c3.72,0,7.188-1.581,10.305-4.698l2.537-2.537C54.033,45.163,54.383,42.833,53.364,40.908z"/></a>
-								<a class="menu-toggle md:hidden  align-top h-12" id='mobileMenuToggle' v-on:click="openMobileMenuContainer"  v-bind:class="{ 'change': m_showing}">
-								  <div class="bar1"></div>
-								  <div class="bar2"></div>
-								  <div class="bar3"></div>
-								</a>
+								   c0,0,0,0,0.001,0c3.72,0,7.188-1.581,10.305-4.698l2.537-2.537C54.033,45.163,54.383,42.833,53.364,40.908z"/>
+					</a>
+					<a class="menu-toggle md:hidden  align-top h-12" id='mobileMenuToggle' v-on:click="openMobileMenuContainer"  v-bind:class="{ 'change': m_showing}">
+						<div class="bar1"></div>
+						<div class="bar2"></div>
+						<div class="bar3"></div>
+					</a>
 				</li>
-				<li class=" primary_nav  md:flex md:order-last md:justify-around md:w-full lg:w-auto lg:order-none border-box items-center" v-bind:class="{'block': m_showing, 'hidden': !m_showing}">
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl  px-12 py-3 md:text-lg md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 " v-on:click="togglemenu"  data-menu='process' data-menutitle='Process and Services'>Our Process</button>
-								<div class='vertical-menu' data-nav='process' data-menu-place='header' v-bind:style="{ display: display.process }">
-									<h5 class='text-large text-center invisible md:visible md:text-left md:text-m font-light block mb-2 md:ml-0'>Web Design &amp; Development</h5>
-								</div>	
-								<div class='p-4 md:p-0 vertical-menu items-center' data-nav='process' data-menu-place='left' v-bind:style="{ display: display.process }">
-									<h6 class='text-large md:text-m text-gray-700 font-weight-500 block mb-2 pb-2 md:pb-0  md:ml-0 border-b-4 border-red-200'>Our Process</h6>
-									<ul class="subnav left" >
+				<li class=" primary_nav  flex flex-col md:flex-row md:items-center md:order-last md:justify-center md:align-center md:w-full lg:w-auto lg:order-none border-box " v-bind:class="{'flex': m_showing, 'hidden md:flex': !m_showing}">
+					<button class="hideIt text-gray-700 hover:text-gray-800 hover:bg-gray-100  text-2xl  px-12 py-3 md:text-lg lg:text-base xl:text-xl md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 " v-on:click="togglemenu"  data-menu='process' data-menutitle='Process and Services'>Our Process</button>
+					<div class='vertical-menu' data-nav='process' data-menu-place='header' v-bind:style="{ display: display.process }">
+						<h5 class='text-large text-center invisible md:visible md:text-left md:text-m font-light block mb-2 md:ml-0'>Web Design &amp; Development</h5>
+					</div>	
+					<div class='p-4 md:p-0 vertical-menu items-center' data-nav='process' data-menu-place='left' v-bind:style="{ display: display.process }">
+						<h6 class='text-large md:text-m text-gray-700 font-weight-500 block mb-2 pb-2 md:pb-0  md:ml-0 border-b-4 border-red-200'>Our Process</h6>
+						<ul class="subnav left" >
 									
-									<li><a href="/web-design-process#step1:StabilizeAndSecure" >Step 1: Stabilize and Secure</a></li>
-									<li><a href="/web-design-process#step3:Scale" >Step 2: Enhance and Study</a></li>
-									<li><a href="/web-design-process#step3:Scale" >Step 3: Scale</a></li>
-									<li><a href="/web-design-process#nicheServices" >Niche Services</a></li>
-									</ul>
-								</div>
-								<div class='px-4 md:p-0 vertical-menu' data-nav='process' data-menu-place='right' v-bind:style="{ display: display.process }">
-									<ul class="subnav right" >
+							<li><a href="/web-design-process#step1:StabilizeAndSecure" >Step 1: Stabilize and Secure</a></li>
+							<li><a href="/web-design-process#step3:Scale" >Step 2: Enhance and Study</a></li>
+							<li><a href="/web-design-process#step3:Scale" >Step 3: Scale</a></li>
+							<li><a href="/web-design-process#nicheServices" >Niche Services</a></li>
+						</ul>
+					</div>
+					<div class='px-4 md:p-0 vertical-menu' data-nav='process' data-menu-place='right' v-bind:style="{ display: display.process }">
+						<ul class="subnav right" >
 										
-										<li><a href="/web-design-process/website-problem-rescue">Website Problem Rescue</a></li>
-										<li><a href="/web-design-process/front-end-feature-design-and-translation">Front-end Feature Design and Translation</a></li>
-										<li><a href="/web-design-process/content-management-system-migration">Content Strategy / SEO</a></li>
-										<li><a href="/web-design-process/content-strategy-seo-cro">Social Media</a></li>
-										<li><a href="/web-design-process/social-media">Petroglyph UI Web Design &amp; Code Customization</a></li>
-										<li><a href="/web-design-process/expressionengine-cms-development-upgrades">ExpressionEngine Websites</a></li>
-										<li><a href="/web-design-process/craft-cms-development-design">Craft CMS Websites</a></li>
-										
-										
-									</ul>
-								</div>
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1  lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 " v-on:click="togglemenu"  data-menu='work' data-menutitle='See our work'>Work</button>
-								<div class='p-4 vertical-menu' data-nav='work' data-menu-place='header' v-bind:style="{ display: display.work }">
-									<ul class="subnav ">
-										<li><a href="/work">Work Examples</a></li>
+							<li><a href="/web-design-process/website-problem-rescue">Website Problem Rescue</a></li>
+							<li><a href="/web-design-process/front-end-feature-design-and-translation">Front-end Feature Design and Translation</a></li>
+							<li><a href="/web-design-process/content-management-system-migration">Content Strategy / SEO</a></li>
+							<li><a href="/web-design-process/content-strategy-seo-cro">Social Media</a></li>
+							<li><a href="/web-design-process/social-media">Petroglyph UI Web Design &amp; Code Customization</a></li>
+							<li><a href="/web-design-process/expressionengine-cms-development-upgrades">ExpressionEngine Websites</a></li>
+							<li><a href="/web-design-process/craft-cms-development-design">Craft CMS Websites</a></li>
+													
+						</ul>
+					</div>
+					<button class=" hideIt text-gray-700 hover:text-gray-800 hover:bg-gray-100  text-2xl md:text-lg lg:text-base xl:text-xl px-12 py-3 md:px-6 md:py-1  lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 " v-on:click="togglemenu"  data-menu='work' data-menutitle='See our work'>Work</button>
+					<div class='p-4 vertical-menu' data-nav='work' data-menu-place='header' v-bind:style="{ display: display.work }">
+							<ul class="subnav ">
+								<li><a href="/work">Work Examples</a></li>
+								<li><a href="#">Sample sample sample!</a></li>
 									
-										<li><a href="#">Sample sample sample!</a></li>
-									
-									</ul>
-								</div>
+							</ul>
+					</div>
 			
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0"   v-on:click="togglemenu"  data-menu='blog' data-menutitle='Postcards Blog'>Postcards Blog</button>
-								<div class='vertical-menu' data-nav='blog' data-menu-place='header' v-bind:style="{ display: display.blog }">
+					<button class="text-gray-700 hover:text-gray-800 hover:bg-gray-100  text-2xl md:text-lg lg:text-base xl:text-xl px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0"   v-on:click="togglemenu"  data-menu='blog' data-menutitle='Postcards Blog'>Postcards Blog</button>
+						<div class='vertical-menu' data-nav='blog' data-menu-place='header' v-bind:style="{ display: display.blog }">
 									<form class='clearfix flex flex-row flex-nowrap my-3'  action="{# url('search/tips') #}">
 										<input name="q" type='text' placeholder="Search" >
 										<button type='submit' class='px-6 py-2 border rounded text-white text-bold bg-teal-700  hover:bg-teal-600 block md:inline-block text-center ml-0 mr-4 right float-right'>Go</button>
@@ -89,9 +89,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									<li><a href="#">Experience &amp; Guarantees</a></li>
 									<li><a href="/blog">Postcards Blog Home</a></li>
 									</ul>
-								</div>
+						</div>
 							
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 "  v-on:click="togglemenu"  data-menu='about' data-menutitle='About Us'>Who We are</button>
+					<button class="text-gray-700 hover:text-gray-800 hover:bg-gray-100  text-2xl md:text-lg lg:text-base xl:text-xl px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 "  v-on:click="togglemenu"  data-menu='about' data-menutitle='About Us'>Who We are</button>
 								<div class='vertical-menu p-4' data-nav='about' data-menu-place='left' v-bind:style="{ display: display.about}">
 									<ul class="subnav left" >
 										<li><a href="#">History &amp; Mission</a></li>
@@ -99,15 +99,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										<li class="whitespace-nowrap"><a href="#" class="whitespace-nowrap">Experience &amp; Guarantees</a></li>
 									</ul>
 								</div>
-								<div class="vertical-menu p-4" data-nav='about' data-menu-place='right' v-bind:style="{ display: display.about}" >
+								<div class="vertical-menu p-4 " data-nav='about' data-menu-place='right' v-bind:style="{ display: display.about}" >
 									<h6 class='text-xl md:text-m text-gray-700 font-weight-500 block mb-2 pb-2 md:pb-0  md:ml-0 border-b-4 border-red-200'>Office:</h6>
 									<ul class="subnav right mb-4 utility" >
-										<li class=""><a href="/locations">Albuquerque, NM</a></li>
+										<li class=""><a href="/about-aquarian/arcata-california-web-designer">Arcata, California</a></li>
+										<li class=""><a href="/about-aquarian/albuquerque-nm">Albuquerque, NM</a></li>
+										
 										<li><a href="#">Working here</a></li>
 									
 									</ul>												
 								</div>
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 " v-on:click="togglemenu"  data-menu='contact' data-menutitle='Points of Contact'>Get In Touch</button>
+								<button class="text-gray-700 hover:text-gray-800 hover:bg-gray-100  text-2xl md:text-base xl:text-xl px-12 py-3 md:px-6 md:py-1 lg:px-4 xl:px-6 font-medium block md:flex mr-auto ml-auto md:m-0 " v-on:click="togglemenu"  data-menu='contact' data-menutitle='Points of Contact'>Get In Touch</button>
 								<div class='vertical-menu p-4' data-nav='contact' data-menu-place='header' v-bind:style="{ display: display.contact}">
 									<ul class="subnav " >
 										<li><a href="#">Contact Page</a></li>
@@ -118,7 +120,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 					     		<div  data-nav='contact' data-menu-place='footer' v-bind:style="{ display: display.contact}" class="flex flex-row justify-around" >
 										<a href="https://x.com/artnweb" class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" title="Aquarian Web Studio on Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-										<a class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" href="https://www.facebook.com/aquarianwebstudio" title="Aquarian Web Studio on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
 										<a class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" href="https://www.linkedin.com/company/aquarian-web-studio" title="Aquarian Web Studio on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
 										<a class="text-turquoise-600  hover:text-turquoise-500 border-0 mx-1" href="https://github.com/petroglyphcode" title="Petroglyph UI and more on Github"><i class="fa-brands fa-github"></i></a>
 												
@@ -127,7 +128,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								
 				</li>
 				<li class="secondary_nav  md:flex md:justify-end md:w-1/2 lg:w-auto items-center" v-bind:class="{'block': m_showing, 'hidden': !m_showing}">
-								<a class="phone-btn flex invisible h-0 md:block md:visible align-top md:h-auto w-10 border border-gray-200 rounded md:p-2 bg-teal-700" title="Call Us Now" href='tel:5056522250'><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								<a class="phone-btn flex invisible h-0 md:block md:visible align-top md:h-auto w-10 border border-gray-200 rounded md:p-2 bg-teal-700" title="Call Us Now" href='tel:7074409305'><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 									viewBox="0 0 53.942 53.942" style="enable-background:new 0 0 53.942 53.942;" xml:space="preserve">
 							   <path style="fill:#fff;fill-rule:evenodd;clip-rule:evenodd;" d="M53.364,40.908c-2.008-3.796-8.981-7.912-9.288-8.092c-0.896-0.51-1.831-0.78-2.706-0.78c-1.301,0-2.366,0.596-3.011,1.68
 								   c-1.02,1.22-2.285,2.646-2.592,2.867c-2.376,1.612-4.236,1.429-6.294-0.629L17.987,24.467c-2.045-2.045-2.233-3.928-0.632-6.291
@@ -135,8 +136,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								   c-0.173-0.296-4.291-7.27-8.085-9.277c-0.708-0.375-1.506-0.573-2.306-0.573c-1.318,0-2.558,0.514-3.49,1.445L4.7,3.986
 								   c-4.014,4.013-5.467,8.562-4.321,13.52c0.956,4.132,3.742,8.529,8.282,13.068l14.705,14.705c5.746,5.746,11.224,8.66,16.282,8.66
 								   c0,0,0,0,0.001,0c3.72,0,7.188-1.581,10.305-4.698l2.537-2.537C54.033,45.163,54.383,42.833,53.364,40.908z"/></a>
-								<button class="text-gray-600 hover:text-gray-700 hover:bg-gray-100  text-2xl md:text-lg px-12 py-3 md:px-6 md:py-1 font-medium block md:flex mr-auto ml-auto md:m-0" id="show-modal" @click="showModal = true">Newsletter</button>
-								
+<a id='swapSix' href="/newsletter" class="text-gray-700 hover:text-gray-800 hover:bg-gray-100  text-2xl md:text-lg lg:text-base xl:text-xl px-12 py-3 md:px-6 md:py-1 font-medium  mr-auto ml-auto md:m-0 text-center block md:flex hideIt " >Newsletter</a>								
 				</li>
 							
 			</ul>
@@ -158,6 +158,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div> 
 		</nav>
 	</header>
+
+	<%= require('html-loader!./partials/type_greet.html').default %>
+
 	<div class="flex mb-4">
 		<div class="w-full  ">
 		<h1 class="items-center
@@ -183,6 +186,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			  </ul>
 		</div>
 
+	</div>
+	<div class='mb-4 flex flex-col md:flex-row justify-center border-b-4 border-gray-100 mb-12'>
+		<div class="max-w-[2500px] w-full flex flex-col md:flex-row md:flex-wrap  gap-x-8 gap-y-4 lg:flex-nowrap items-center justify-center md:justify-around  pb-6 ">
+			<a href="/web-design-process/craft-cms-development-design" title="Craft CMS Web Design, Web Development, and Maintenance"><img src="img/craft-verified-badge.png" alt="Official Craft Verified Partner badge" class="max-w-xs xl:max-w-sm my-4"></a> 
+			<a href="/web-design-process/expressionengine-cms-development-upgrades" title="ExpressionEngine Web Design, Web Development, and Maintenance"><img src="img/expressionengine-silver-badge.png" alt="Official ExpressionEngine Silver Partner badge" class="max-w-xs xl:max-w-sm my-4"></a> 
+			<a class="button btn-lg callout mb-2 mt-4 ml-auto mr-auto md:ml-0 md:mr-0 md:mt-auto md:mb-auto max-w-xs xl:max-w-sm" href='/contact' style=" white-space: nowrap;">Get Started Today</a>
+		</div>
 	</div>
 	<div class='flex mb-4 '>
 		<div class="w-3/4 ml-auto mr-auto  h-12 font-body">
@@ -468,12 +478,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<hr class="bg-turquoise-300 h-1">
 		</div>
 	</div>
-	<div class='flex mb-4 '>
+	<div class='flex flex-col mb-4 '>
+		<div class="w-full flex flex-col" id="contentHeader">
+		<page-content-header></page-content-header>
+		</div>
 		<article class=" w-full md:w-3/4 lg:w-1/2 ml-auto mr-auto font-body my-8 read">
 			
 			<%= require('html-loader!./partials/article_contents.html').default %>
 
-			<Modal :is-open="showModal" :content="modalContent" @close="closeModal" ></Modal>
+			<Modal :is-open="showModal" :header="modalHeader":content="modalContent" @close="closeModal" ></Modal>
 		</article>
 	</div>
 	<div class='lg:flex mb-4 ml-auto mr-auto lg:mr-0 lg:ml-0 w-3/4 lg:w-full '>
@@ -634,7 +647,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="flex-grab ml-auto mr-auto">
 				<a href="https://www.aquarianwebdesign.com">
 				<div class=" card  ml-auto mr-auto md:ml-4 md:mr-4 mb-8">
-				  <img class="" src="/img/sometimes_800.jpg" alt="Image">
+				  <img class="" src="img/sometimes_800.jpg" alt="Image">
 				  <div class="px-6 py-4">
 				    <h4 class="">A card that says something about this image or that together with this image,</h4>
 				    <p class=" ">
@@ -673,7 +686,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<!--<a href="https://www.aquarianwebdesign.com">-->
 				<div class="postcard  ml-auto mr-auto md:ml-4 md:mr-4  relative overflow-hidden" >
                   <div class='image' > 
-				    <img class="w-full" src="/img/sometimes_800.jpg" alt="Image" style="opacity:.1">           
+				    <img class="w-full" src="img/sometimes_800.jpg" alt="Image" style="opacity:.1">           
 				  </div>
 				  <div class='back  xl:flex xl:flex-col xl:content-center  xl:content-center ' style=''>
     				  <div class="px-6 py-4 lg:py-2  text-right xl:m-4" >

@@ -1,18 +1,147 @@
-import _ from 'lodash';
+import { range } from 'lodash';
 import  { createApp } from 'vue/dist/vue.esm-bundler.js';
 import Modal from './components/modal.vue';
+import ee_partner from './assets/img/expressionengine-silver-badge.png';
+import craft_partner from './assets/img/craft-verified-badge.png';
 import img from './assets/img/sometimes_800.jpg';
 import logo from './assets/img/just-sailboat.svg';
 import tw_logo from './assets/img/tw-logo-white.svg';
+import content_header_img from './assets/img/craft-verified-partner-service-img.png';
+import PageContentHeader from './components/page_content_header.vue'
 
-//const { compile } = require('@vue/compiler-sfc');
 
-// const figures = document.querySelectorAll('figure');
-// for (const figure of figures ){
-//   figure.addEventListener("click", function(){
-//   showInModal(this)
-// });
-// }
+const SHIMMER_DURATION = 1000;
+
+
+const btns = document.querySelectorAll('.button.callout');
+
+function generateShimmer(btn) {
+  const shimmer = document.createElement('span');
+  shimmer.classList.add('shimmer');
+  shimmer.style.animationDuration= SHIMMER_DURATION +'ms';
+  btn.appendChild(shimmer);
+
+  window.setTimeout(()  => {
+      shimmer.remove();
+    }, SHIMMER_DURATION +100);
+}
+if (btns.length ){
+  btns.forEach(btn=>{
+   btn.addEventListener('mouseenter',() => generateShimmer(btn));
+   btn.addEventListener('focus', () => generateShimmer(btn));
+  });
+}
+
+var TxtType = function(el,elR, toRotate, toRespond, period,respondPeriod) {
+        this.toRotate = toRotate;
+        this.toRotateResponse = toRespond;
+        this.el = el;
+        this.elR = elR;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.respondPeriod=parseInt(respondPeriod, 10) || 2000;
+        this.txt = '';
+        this.responseTxt = '';
+        this.tick();
+        this.isDeleting = false;
+        
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var j = this.loopNum % this.toRotateResponse.length;
+        var fullTxt = this.toRotate[i];
+        var responseFullTxt =this.toRotateResponse[i];
+        //console.log("var period"+this.period);
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+          this.responseTxt =responseFullTxt.substring(0, this.responseTxt.length - 1);
+        
+        } else if (!this.isDeleting && this.txt === fullTxt) {
+            this.responseTxt =responseFullTxt.substring(0, this.responseTxt.length + 1);
+            delta = this.responsePeriod;
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+    
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+        this.elR.innerHTML = '<span class="wrap">'+this.responseTxt+'</span>';
+        var that = this;
+
+        //Interval Modeled after this for min 160:
+        //
+        // const getRandomNumber = (min, max) => {
+        //   return Math.random() * (max - min) + min
+        // }
+        var delta =  Math.random() * 40 +160; 
+        //var delta = 200 - Math.random() * 100; - min 101
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt && this.responseTxt=== responseFullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+
+        } else if (this.isDeleting && this.txt === '' && this.responseTxt=== '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+    const banners = document.querySelectorAll('.typeGreet');
+    //window.console.log(articles.length);
+    var toRotate=[];
+    var toRespond=[];
+
+    if ( banners.length){
+      // console.log('banners: '+banners);
+        const banners2 = document.querySelectorAll('.typeGreet2');
+        const calls = banners[0].closest('.call-response').querySelectorAll('h2.call');
+        const resps = banners[0].closest('.call-response').querySelectorAll('h3.response');
+      // console.log('responses: '+ calls[2].innerHTML);
+        for (const call of calls){
+          call.style.display = 'none';
+          toRotate.push(call.innerHTML);
+        }
+        for (const resp of resps){
+          resp.style.display = 'none';
+          toRespond.push(resp.innerHTML);
+        }
+      // console.log(toRespond);
+        window.onload = function() {
+        
+        for (var i=0; i<banners.length; i++) {
+  
+            // var toRotate = banners[i].getAttribute('data-type');
+            // var toRespond = banners2[i].getAttribute('data-type');
+            // var toRotate = calls[i].innerHTML;
+            // var toRespond = resps[i].innerHTML;
+            var period = banners[i].getAttribute('data-period');
+            var respondPeriod = banners2[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(banners[i],banners2[i], toRotate,toRespond, period,respondPeriod);
+            }
+        }
+    };
+  }
+
+const contentHeader = createApp({
+    data() {
+    return {
+     
+    }
+  },
+  components:{
+
+    PageContentHeader
+
+  },
+}).mount('#contentHeader');
 const articles = document.querySelectorAll('article.read');
 //window.console.log(articles.length);
 for (const article of articles){
@@ -20,12 +149,19 @@ var articlefeatures = createApp({
   data() {
     return {
       showModal: false,
-      modalContent: {}
+      modalContent: {},
+      modalHeader:{}
     }
   },
   mounted(){
-    window.console.log('article mounted');
+   // window.console.log('article mounted');
     article.classList.add('enhanced');
+    // close when user presses esc
+    document.addEventListener("keydown", (e) => {
+    if (e.keyCode == 27) {
+          this.showModal=false;
+    }
+    });
   },
   components:{
     Modal
@@ -36,9 +172,10 @@ var articlefeatures = createApp({
       this.modalContent=e.target.closest('figure');
       if (window.innerWidth >1023 && (this.modalContent.getElementsByTagName('img')[0].getAttribute('data-large')  !== null)){
         this.modalContent.getElementsByTagName('img')[0].src = this.modalContent.getElementsByTagName('img')[0].getAttribute('data-large');
-      //console.log(this.modalContent.getElementsByTagName('img')[0].src)
+        //console.log(this.modalContent.getElementsByTagName('img')[0].src)
+      
       }
-      window.console.log( this.showModal);
+      //window.console.log( window.innerWidth);
 
     },
     closeModal(){
@@ -48,16 +185,6 @@ var articlefeatures = createApp({
 }).mount(article);
 }
 
-
-
-function component() {
-  //const element = document.createElement('div');
-
-  // Lodash, currently included via a script, is required for this line to work
-  //element.innerHTML = _.join(['I am a JS ', 'insertion'], ' ');
-
-  //return element;
-}
 //document.getElementsByTagName('footer')[0].appendChild(component());
 function menuToggle(x) {
   x.classList.toggle("change");
@@ -145,6 +272,14 @@ var topNavigation = createApp({
       mobile: window.innerWidth >767 ? false: true,
       
     }
+  },
+  mounted() {
+    const elems = document.querySelectorAll('.hideIt');
+    //window.console.log(elems.length);
+
+    for (const elem of elems) {
+      elem.classList.remove("hideIt");
+    } 
   },
   methods: {
     hovermenu: function (event) { //hovering buttons - open or move the menu
@@ -314,13 +449,14 @@ var topNavigation = createApp({
     } else {
     //console.log('Delay: '+ delay+ 'without delay');
     this.showing= false;
-    console.log('hiding in hide function 2');
+    //console.log('hiding in hide function 2');
     this.menudisplay= 'none';
     this.resetmenu();
     }
   },
   openMobileMenuContainer: function(x) {
     this.m_showing = this.m_showing === true ? false : true; //change the class
+    console.log('m_showing changed:'+this.m_showing);
     }
     }
   }).mount('header#top');

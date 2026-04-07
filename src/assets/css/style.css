@@ -1,4 +1,4 @@
-@tailwind base;
+@import "tailwindcss";
 
 @font-face {
   font-family: "Merriweather Sans";
@@ -96,10 +96,137 @@ font-family: "Merriweather Sans";
   font-style:italic;
   src: url("../fonts/libre-franklin/librefranklin-bolditalic.ttf") format("truetype");
 }
+@font-face {
+  font-family: "CourierPrime";
+  font-weight: 400;
+  font-style:italic;
+  src: url("../fonts/Courier_Prime/CourierPrime-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CourierPrime";
+  font-weight:  400;
+  src: url("../fonts/Courier_Prime/CourierPrime-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CourierPrime";
+  font-weight: 700;
+  font-style:italic;
+  src: url("../fonts/Courier_Prime/CourierPrime-BoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CourierPrime";
+  font-weight:  700;
+  src: url("../fonts/Courier_Prime/CourierPrime-Bold.ttf") format("truetype");
+}
+@source "../../../../deploy/templates/*.{html,twig}";
+@source "../../../../deploy/templates/**/*.{html,twig}";
+@source "../../../../deploy/templates/_components/\_*.{html,twig}";
+ @theme{
+  --font-body: "Libre Franklin", serif;
+  --font-display:"Merriweather Sans", sans-serif; 
+  --font-mono: "CourierPrime", mono;
 
-@tailwind components;
+	--color-gray-100: #EAEFEF;
+	--color-gray-200: #bdc5c5;
+	--color-gray-300: #a7b2b2;
+	--color-gray-400: #919f9f;
+	--color-gray-500: #7b8c8b;
+	--color-gray-600: #657978;
+	--color-gray-700: #4f6665;
+	--color-gray-800: #395352;
+	--color-gray-900: #1c3333;
 
-@tailwind utilities;
+	--color-midnight-100: #28542B;
+	--color-midnight-200: #295432;
+	--color-midnight-300: #295337;
+	--color-midnight-400: #2A533C;
+	--color-midnight-500: #2A5241;
+	--color-midnight-600: #2A5147;
+	--color-midnight-700: #2B514C;
+	--color-midnight-800: #2B5050;
+	--color-midnight-900: #2A5051;
+
+	--color-turquoise-100: #CDEBED;
+	--color-turquoise-200: #A2CFD5;
+	--color-turquoise-300: #7ABBC2;
+	--color-turquoise-400: #49A8B0;
+	--color-turquoise-500: #059da5;
+	--color-turquoise-600: #2b8286;
+	--color-turquoise-700: #2f696b;
+	--color-turquoise-800: #2a5051;
+	--color-turquoise-900: #1f3736;
+
+	--color-green-100: #E3F2E5; 
+	--color-green-200: #C2DBC2;
+	--color-green-300: #93C094;
+	--color-green-400: #68AB6F;
+	--color-green-500: #228541;
+	--color-green-600: #296C36;
+	--color-green-700: #28542B;
+	--color-green-800: #1c341a;			
+
+	--color-orange-100: #FEEDD9;
+	--color-orange-200: #FCDBB3;
+	--color-orange-300: #F8C280;
+	--color-orange-400: #F5A94C;
+	--color-orange-500: #ea8902;
+	--color-orange-600: #bd751b;
+	--color-orange-700: #6c4311;
+	--color-orange-800: #432a0b;
+
+	--color-yellow-100: #FFF3D9;
+	--color-yellow-200: #FFE88C;
+	--color-yellow-300: #ffdc3a;
+	--color-yellow-400: #ffc640;
+	--color-yellow-500: #d1a135;
+	--color-yellow-600: #9d7928;
+	--color-yellow-700: #725511;
+	--color-yellow-800: #352709;
+
+
+	--color-sunrise-100: #ffde17;
+	--color-sunrise-200: #ffdb18;
+	--color-sunrise-300: #ffd21a;
+	--color-sunrise-400: #fec91c;
+	--color-sunrise-500: #fbbe1e;
+	--color-sunrise-600: #f9b61f;
+	--color-sunrise-700: #f7ac20;
+	--color-sunrise-800: #f5a321;
+	--color-sunrise-900: #f29821;
+
+
+	--color-sunset-100: #f29821;
+	--color-sunset-200: #F18B24;
+	--color-sunset-300: #F18125;
+	--color-sunset-400: #F07526;
+	--color-sunset-500: #F06928;
+	--color-sunset-600: #EF5C28;
+	--color-sunset-700: #EF4E29;
+	--color-sunset-800: #EE3C2A;
+	--color-sunset-900: #EE352A;
+	
+	--color-red-100: #F2DDD3;
+	--color-red-200: #FBC0A7;
+	--color-red-300: #F69071;
+	--color-red-400: #F26346;
+	--color-red-500: #EE352A;
+	--color-red-600: #C22C26;
+	--color-red-700: #9D2420;
+	--color-red-800: #801D1A;
+	--color-red-900: #461511;
+
+
+  --shadow-default: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
+  --shadow-lg:0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, .1), 0 10px 10px -5px rgba(0, 0, 0, .04);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0,0,0,0.06);
+  --shadow-outline: 0 0 0 3px rgba(96,171,210,0.5);
+  --shadow-focus: 0 0 0 3px rgba(96,171,210,0.5);
+  --shadow-none: none;
+}
+
+
 a{ @apply text-turquoise-800  ;}
 p a, .read  li a {@apply border-b-2 border-orange-400;}
 hr {border-width:0;}
@@ -107,57 +234,57 @@ hr {border-width:0;}
 th{
   @apply bg-gray-100 text-gray-700 font-bold py-2  text-left;
 }
-.text-tiny {
+@utility text-tiny {
 	font-size:12px;
 	line-height:16px;
 	@apply font-body;
 }
-.text-small{
+@utility text-s{
 	font-size:14px;
 	line-height:24px;
 	@apply font-body;
 }
-.text-normal{
+@utility text-normal{
 	font-size:14px;
 	line-height:24px;
 	@apply font-body;
 }
-.text-large{
+@utility text-l{
 	font-size:18px;
 	line-height:32px;
 	@apply font-body;
 }
-.heading-xs{
+@utility heading-xs{
 	font-size:21px;
 	line-height:32px;
 	font-weight:300;
 	@apply font-display;
 }
-.heading-s{
+@utility heading-s{
 	font-size:24px;
 	line-height:40px;
 	font-weight:300;
 	@apply font-display;
 }
-.heading{
+@utility heading{
 	font-size:28px;
 	line-height:48px;
 	font-weight:400;
 	@apply font-display;
 }
-.heading-m{
+@utility heading-m{
 	font-size:32px;
 	line-height:56px;
 	font-weight:400;
 	@apply font-display;
 }
-.heading-l{
+@utility heading-l{
 	font-size:36px;
 	line-height:64px;
 	font-weight:400;
 	@apply font-display;
 }
-article .heading-l{
+article.heading-l{
   line-height:48px;
 }
 .heading-l.leading-tight{
@@ -165,47 +292,87 @@ article .heading-l{
 	line-height:1.15;
 
 }
-.heading-xl{
+@utility heading-xl{
 	font-size:48px;
 	line-height:72px;
 	font-weight:700;
 	@apply font-display;
 }
-.heading-d{
+@utility heading-d{
 	font-size:60px;
 	line-height:80px;
 	font-weight:400;
 	@apply font-display;
 }
-.heading-dxl{
+@utility heading-dxl{
 	font-size:72px;
 	line-height:96px;
 	font-weight:300;
 	@apply font-display;
 }
-button {
-  @apply  font-bold py-2 px-4 rounded border border-gray-100 self-start self-baseline;
+button, a.button {
+  @apply  font-bold py-2 px-4 rounded-lg border border-gray-100 self-start self-baseline;
 }
-button:hover {
+button:hover a.button:hover{
   @apply bg-gray-100 border border-gray-200;
 }
-button.btn-lg, .btn-lg button.fui-btn.fui-submit{
-	@apply py-4 px-10 text-large font-bold ;
+button.btn-lg,a.button.btn-lg, .btn-lg button.fui-btn.fui-submit{
+	@apply py-4 px-10 text-l font-bold ;
 }
 
 
-button.callout, button.fui-btn.fui-submit {
+button.callout, a.button.callout, button.fui-btn.fui-submit {
   transition:all 0.5s ;
   white-space: nowrap;
-  @apply    max-w-sm border-l-2 border-r-2 border-turquoise-600 bg-turquoise-400 text-white;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(
+        circle at 50% 50%,
+        oklch(0.6332 0.1077 201.2) 0% 60%,
+        oklch(0.6032 0.1077 201.2) 70%,
+       oklch(0.5732 0.1077 201.2) 80%,
+        oklch(0.5432 0.1077 201.2) 100%
+      ), linear-gradient(
+      to top,
+     oklch(0.5161 0.0666 201.2),
+      oklch(0.6832 0.1077 201.2)
+    );
+
+  @apply    max-w-sm border-l-2 border-turquoise-600  text-white shadow-md;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 16px;
+    right: 16px;
+    height: 10px;
+    border-radius: 100px 100px 0 0;
+    border-top: 4px solid white;
+    filter: blur(4px);
+    opacity: 0.625;
+  }
 }
-button.callout:hover, button.fui-btn.fui-submit:hover  {
+button.callout:hover, a.button.callout:hover, button.fui-btn.fui-submit:hover  {
   transform:scale(1.1,1.1);
     -webkit-transform:scale(1.1,1.1);
     -moz-transform:scale(1.1,1.1);
   @apply border-turquoise-700 bg-turquoise-500;
 }
-
+ .shimmer {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      /* hsl(180deg 100% 90%), */
+     hsl(40, 81.82%, 95.69%),
+      transparent
+    );
+    animation: shimmering forwards;
+  }
 .transition-bg {
   transition:background-color 0.5s ease;
 }
@@ -223,7 +390,7 @@ button.callout:hover, button.fui-btn.fui-submit:hover  {
 	@apply text-red-500 text-xs italic
 }
 label, .fui-label, .fui-label-above-input .fui-subfield-label-above-input .fui-label{
-	@apply font-bold !important; 
+	@apply font-bold ; 
 }
 input[type='text'], input[type='email'], textarea {
 	@apply shadow bg-white appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
@@ -235,7 +402,7 @@ input[type='checkbox']{
 	@apply text-turquoise-800 bg-red-800;
 }
 .fui-instructions p {
-  @apply text-small text-gray-700;
+  @apply text-s text-gray-700;
 }
 input.error {
 	@apply shadow appearance-none border border-red-500 bg-red-100 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight;
@@ -256,7 +423,7 @@ select.error {
   background: #F7C5A4; /* Gecko Browsers */
 }
 figcaption {
-	@apply text-small italic text-gray-700 p-2;
+	@apply text-s italic text-gray-700 p-2;
 }
 
 blockquote {
@@ -269,12 +436,12 @@ blockquote p{
   
 }
 blockquote footer{
-	@apply text-small italic text-gray-500  mt-4 mb-2;
+	@apply text-s italic text-gray-500  mt-4 mb-2;
 }
 blockquote footer a{
  @apply not-italic;
 }
-p {@apply ml-auto mr-auto text-large;}
+p {@apply ml-auto mr-auto text-l;}
 p.left { @apply ml-0;}
 p.short{max-width:39px; min-width:35px;}
 p.compliant{max-width:50px; min-width:40px;}
@@ -282,7 +449,7 @@ p.optimal{max-width:90px; min-width:51px;}
 p.toobig{ min-width:91px;}
 .read {@apply ml-auto mr-auto;}
 .read p {
- @apply  max-w-2xl mr-auto ml-auto my-4 text-large;
+ @apply  max-w-2xl mr-auto ml-auto my-4 text-l;
 }
 .read .blog-bio p {@apply text-base}
 .read h1 {@apply heading-d text-red-600 my-8}
@@ -291,13 +458,13 @@ p.toobig{ min-width:91px;}
 .read h4 {@apply heading text-gray-600  my-8;}
 .read h5 {@apply heading-s text-gray-800 font-bold  my-8;}
 
-.read figure { @apply ml-auto mr-auto my-8 }
+.read figure { @apply ml-auto mr-auto my-8 max-w-4xl}
 .read ul {
-   @apply  max-w-xl mr-auto ml-auto my-4 text-large leading-snug list-disc ;
+   @apply  max-w-xl mr-auto ml-auto my-4 text-l leading-snug list-disc ;
    max-width:620px;
 }
 .read ol {
-   @apply  max-w-xl mr-auto ml-auto my-4 text-large leading-snug list-decimal ;
+   @apply  max-w-xl mr-auto ml-auto my-4 text-l leading-snug list-decimal ;
    max-width:620px;
 }
 
@@ -310,7 +477,7 @@ figure figcaption, figure figcaption p, .read figure figcaption p {
   @apply text-sm mt-0;
 }
 .read ul li, .read ol li{
-    @apply m-2 text-large;
+    @apply m-2 text-l;
     }
 .read blockquote {
     
@@ -350,11 +517,11 @@ code {
 .read pre {@apply  ml-auto mr-auto;}
 
 .read code {
-  @apply max-w-2xl mr-auto ml-auto my-4 text-large;
+  @apply max-w-2xl mr-auto ml-auto my-4 text-l;
 }
 
 blockquote.twitter-tweet, .read blockquote.twitter-tweet{
-    @apply border-2 border-turquoise-200  text-small rounded-t-lg;
+    @apply border-2 border-turquoise-200  text-s rounded-t-lg;
     background: url(../img/tw-logo-white.svg) center left;
     background-size:contain;
     background-repeat: no-repeat;
@@ -388,7 +555,7 @@ blockquote.twitter-tweet p, .read blockquote.twitter-tweet p{
 	@apply text-gray-900 my-2;
 }
 a .card {
-    @apply text-gray-800 text-large font-normal;
+    @apply text-gray-800 text-l font-normal;
 }
 a .card h2{
     @apply font-display text-3xl text-orange-600 font-semibold;
@@ -409,8 +576,7 @@ a .card  p.date{
 	@apply text-orange-500;
 }
 .postcard {
-  width:480px;
-  height:360px;
+ 
   @apply border-2 border-gray-200 shadow-lg;}
 .postcard::after {
     content: ""; 
@@ -460,7 +626,7 @@ header .menu{
 }
 header .menu a{
 
-	@apply font-medium text-large block px-3 py-2 inline-block mt-0  text-gray-700 border-white  mr-4 border-b-4 text-center;
+	@apply font-medium text-l block px-3 py-2 inline-block mt-0  text-gray-700 border-white  mr-4 border-b-4 text-center;
 	display:block;
   white-space: nowrap;
 }
@@ -504,13 +670,13 @@ header .menu a:hover, header .menu a:active{
 .subnav li {
   @apply text-xl py-3;
 }
-.subnav li a{ @apply text-gray-700}
+.subnav li a{ @apply text-gray-800}
 header .dropdown-box {
   max-width:700px;
   position:absolute;
 }
 .dropdown-box .subnav li{
-  @apply my-2 w-full border-b border-gray-100 text-large py-0;
+  @apply my-2 w-full border-b border-gray-100 text-l py-0;
 }
 .dropdown-box .subnav li a{
   @apply py-2 px-2 w-full  flex;
@@ -576,6 +742,152 @@ h1 .logo.lock-up {
 .standout-headline {
   @apply font-display bg-turquoise-100 text-gray-900 text-xl text-center py-4;
 }
+.typeGreet > .wrap { 
+  border-right: 0.5em solid #7ABBC2;
+  animation: blink-border-blue .8s step-end infinite alternate;
+
+}
+.typeGreet2 > .wrap { 
+  border-right: 0.3em solid #f29821;
+  animation: blink-border-gold .8s step-end infinite alternate;
+
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  min-width: 300px;
+
+}
+
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-left: auto;
+  order: 2;
+}
+.modal-body figure {
+  max-height: 80vh;
+  max-width: 95%;
+    /* 80% of the viewport makes sure the whole thing fits */
+
+}
+.modal-body figure img {
+    width:100%;
+    height:100%;
+    max-height:85vh;
+    object-fit:contain;
+}
+.modal-footer {
+    display:flex;
+    flex-direction:row;
+}
+.modal-footer button.close {
+     margin-left: auto;
+  order: 2;
+}
+/* Vue Transition styles for fading */
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.3s ease;
+}
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2025-10-9 15:36:32
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+.color-change-3x {
+	-webkit-animation: color-change-3x 8s linear infinite alternate both;
+	        animation: color-change-3x 8s linear infinite alternate both;
+}
+/**
+ * ----------------------------------------
+ * animation color-change-3x
+ * ----------------------------------------
+ */
+@-webkit-keyframes color-change-3x {
+  0% {
+    
+    background: #ffffff;
+  }
+  50% {
+    background: #feedd9;
+  }
+  100% {
+    background: #e3f2e5;
+  }
+}
+@keyframes color-change-3x {
+    0% {
+    
+    background: #ffffff;
+  }
+  50% {
+    background: #feedd9;
+  }
+  100% {
+    background: #e3f2e5;
+  }
+}
+@keyframes blink-border-blue {
+  /* At 0% (start of animation), the border color is transparent */
+  0% {
+    border-color: #7ABBC2 ;
+  }
+  /* At 50% (middle of animation), the border changes to red */
+  50% {
+     border-color: transparent;
+  }
+  /* The 'step-end' timing function makes the color change immediate rather than a gradual fade */
+}
+@keyframes blink-border-gold {
+  /* At 0% (start of animation), the border color is transparent */
+  0% {
+    border-color: #f29821 ;
+  }
+  /* At 50% (middle of animation), the border changes to red */
+  50% {
+     border-color: transparent;
+  }
+  /* The 'step-end' timing function makes the color change immediate rather than a gradual fade */
+}
+@keyframes shimmering {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
 @media (max-width: 639px) {
   
   .jumbotron .heading-dxl {
@@ -624,8 +936,8 @@ h1 .logo.lock-up {
   }
 
   .postcard {
-    width:508px;
-    height:381px;
+    /* width:508px;
+    height:381px; */
   }
 
 }
@@ -637,8 +949,7 @@ header .menu a {
   font-size:16px;
  }
  .postcard {
-  width:512px;
-  height:384px;
+
 }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px){
@@ -668,8 +979,7 @@ header .menu a {
   @apply font-bold text-xl;
 }
 .postcard {
-  width:572px;
-  height:429px;
+
 }
 .read .before-after figure {@apply w-1/2;}
 }
