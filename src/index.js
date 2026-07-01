@@ -14,6 +14,9 @@ const SHIMMER_DURATION = 1000;
 
 
 const btns = document.querySelectorAll('.button.callout');
+const btnstoo = document.querySelectorAll('.button-callout-wrapper button');
+
+const allBtns= [...btns,...btnstoo];
 
 function generateShimmer(btn) {
   const shimmer = document.createElement('span');
@@ -25,8 +28,8 @@ function generateShimmer(btn) {
       shimmer.remove();
     }, SHIMMER_DURATION +100);
 }
-if (btns.length ){
-  btns.forEach(btn=>{
+if (allBtns.length ){
+  allBtns.forEach(btn=>{
    btn.addEventListener('mouseenter',() => generateShimmer(btn));
    btn.addEventListener('focus', () => generateShimmer(btn));
   });

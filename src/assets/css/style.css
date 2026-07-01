@@ -311,7 +311,7 @@ article.heading-l{
 	@apply font-display;
 }
 button, a.button {
-  @apply  font-bold py-2 px-4 rounded-lg border border-gray-100 self-start self-baseline;
+  @apply  font-bold py-2 px-4 rounded-lg border border-gray-100;
 }
 button:hover a.button:hover{
   @apply bg-gray-100 border border-gray-200;
